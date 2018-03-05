@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/emmaindal/Allergikartan/issues"
   },
-  "homepage": "https://github.com/emmaindal/Allergikartan#readme"
+  "homepage": "https://github.com/emmaindal/Allergikartan#readme",
+  "dependencies": {
+    "animate.css": "^3.6.1",
+    "jquery": "^3.3.1",
+    "materialize-css": "^0.100.2"
+  }
 }
