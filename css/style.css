@@ -14,12 +14,22 @@ body{
     -moz-background-size: cover;
 }
 
+nav{
+	background-color: rgba(255, 255, 255, 0);
+	width: 100% !important;
+}
 .container{
 	width: 100% !important;
-
 }
 
 .mainheading{
 	font-family: 'Sacramento', cursive;
 	font-size: 7rem;
+}
+
+.btn-floating.btn-large{
+	margin: 2%;
+	width: 156px;
+	height: 156px;
+	opacity: 0.7;
 }

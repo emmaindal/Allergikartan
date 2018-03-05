@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Allergikartan</title>
-
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<!-- materialize -->
 	<link rel="stylesheet" href="node_modules/materialize-css/dist/css/materialize.min.css">
 	<link rel="stylesheet" href="node_modules/animate.css/animate.css">
@@ -11,6 +11,15 @@
 </head>
 <body>
 	<div class="container">
+		<nav>
+			<div class="nav-wrapper">
+				<ul class="left hide-on-med-and-down">
+					<li class="active"><a href="#">Hem</a></li>
+					<li><a href="#">Tipsa oss</a></li>
+					<li><a href="#">Kontakt</a></li>
+				</ul>
+			</div>
+		</nav>
 		<section class="row">
 			<div class="col s12 m12">
 				<h1 class="center white-text mainheading animated slideInDown">Allergikartan</h1>
@@ -18,8 +27,16 @@
 		</section>
 		<section class="row">
 			<div class="col s12 m12 center-align">
+				<a id="one" class="btn-floating btn-large waves-effect waves-light green darken-2"><img id="icon-one" class="icon-img" src="assets/noun_1072398_cc.svg" alt=""></a>
+				<a id="two" class="btn-floating btn-large waves-effect waves-light green darken-2"><img id="icon-two" src="assets/noun_1072399_cc.svg" alt=""></a>
+				<a id="three" class="btn-floating btn-large waves-effect waves-light green darken-2"><img id="icon-three" src="assets/noun_1072400_cc.svg" alt=""></a>
+				<a id="four" class="btn-floating btn-large waves-effect waves-light green darken-2"><img id="icon-four" src="assets/noun_1072403_cc.svg" alt=""></a>
+			</div>
+		</section>
+		<section class="row">
+			<div class="col s12 m12 center-align">
 				<!-- Modal Trigger -->
-				<a class="waves-effect waves-light btn modal-trigger green darken-1" href="#modal1">Hitta restaurang</a>
+				<a id="search-resturant" class="waves-effect waves-light btn modal-trigger green darken-2 disabled" href="#modal1">Hitta restaurang</a>
 
 				<!-- Modal Structure -->
 				<div id="modal1" class="modal modal-fixed-footer">
@@ -40,5 +57,6 @@
 	<!-- materialize -->
 	<script type="text/javascript" src="node_modules/materialize-css/dist/js/materialize.min.js"></script>
 	<script type="text/javascript" src="javascript/script.js"></script>
+	<script type="text/javascript" src="javascript/resturantchoice.js"></script>
 </body>
 </html>
