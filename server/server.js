@@ -10,8 +10,15 @@ app.use(express.static('../public'))
 app.use(express.static('../node_modules'))
 
 app.get('/', function(req, res) {
-    res.sendFile('../public/index.html');
+	res.sendFile(path.join(__dirname,'../public/index.html'));
+});
 
+app.get('/tipsa', function(req, res) {
+    res.sendFile(path.join(__dirname,'../public/tipsa.html'));
+});
+
+app.get('/about', function(req, res) {
+	res.sendFile(path.join(__dirname,'../public/kontakt.html'));
 });
 
 app.listen(8080, () => console.log('Example app listening on port 8080'))
