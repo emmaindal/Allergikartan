@@ -10,7 +10,7 @@ app.use(express.static('../public'))
 app.use(express.static('../node_modules'))
 
 app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname, '../public/index.html'));
+    res.sendFile('../public/index.html');
 
 });
 

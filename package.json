@@ -18,6 +18,7 @@
   "homepage": "https://github.com/emmaindal/Allergikartan#readme",
   "dependencies": {
     "animate.css": "^3.6.1",
+    "express": "^4.16.2",
     "jquery": "^3.3.1",
     "materialize-css": "^0.100.2",
     "mongodb": "^3.0.3",
