@@ -8,44 +8,59 @@
 	<link rel="stylesheet" href="node_modules/materialize-css/dist/css/materialize.min.css">
 	<link rel="stylesheet" href="node_modules/animate.css/animate.css">
 	<link rel="stylesheet" href="css/style.css">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 	<div class="container">
 		<nav>
 			<div class="nav-wrapper">
-				<ul class="left hide-on-med-and-down">
-					<li class="active"><a href="#">Hem</a></li>
-					<li><a href="#">Tipsa oss</a></li>
-					<li><a href="#">Kontakt</a></li>
+				<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+				<ul class="right hide-on-med-and-down">
+					<li class="active"><a href="index.html">Hem</a></li>
+					<li><a href="tipsa.html">Tipsa oss</a></li>
+					<li><a href="kontakt.html">Kontakt</a></li>
+				</ul>
+				<ul class="side-nav" id="mobile-demo">
+					<li class="active"><a href="index.html">Hem</a></li>
+					<li><a href="tipsa.html">Tipsa oss</a></li>
+					<li><a href="kontakt.html">Kontakt</a></li>
 				</ul>
 			</div>
 		</nav>
 		<section class="row">
 			<div class="col s12 m12">
 				<h1 class="center white-text mainheading animated slideInDown">Allergikartan</h1>
+				<p class="center white-text">Laktosfritt - Nötfritt - Glutenfritt - Äggfritt</p>
 			</div>
 		</section>
-		<section class="row">
-			<div class="col s12 m12 center-align">
-				<a id="one" class="btn-floating btn-large waves-effect waves-light green darken-2"><img id="icon-one" class="icon-img" src="assets/noun_1072398_cc.svg" alt=""></a>
-				<a id="two" class="btn-floating btn-large waves-effect waves-light green darken-2"><img id="icon-two" src="assets/noun_1072399_cc.svg" alt=""></a>
-				<a id="three" class="btn-floating btn-large waves-effect waves-light green darken-2"><img id="icon-three" src="assets/noun_1072400_cc.svg" alt=""></a>
-				<a id="four" class="btn-floating btn-large waves-effect waves-light green darken-2"><img id="icon-four" src="assets/noun_1072403_cc.svg" alt=""></a>
+		<section class="row icons center-align">
+			<div class="col s12 m2 offset-m2">
+				<a id="one" class="btn-floating btn-large waves-effect waves-light green darken-2 z-depth-5"><img id="icon-one" class="icon-img" src="assets/noun_1072398_cc.svg" alt=""></a>
+			</div>
+			<div class="col s12 m2">
+				<a id="two" class="btn-floating btn-large waves-effect waves-light green darken-2 z-depth-5"><img id="icon-two" src="assets/noun_1072399_cc.svg" alt=""></a>
+			</div>
+			<div class="col s12 m2">
+				<a id="three" class="btn-floating btn-large waves-effect waves-light green darken-2 z-depth-5"><img id="icon-three" src="assets/noun_1072400_cc.svg" alt=""></a>
+			</div>
+			<div class="col s12 m2">
+				<a id="four" class="btn-floating btn-large waves-effect waves-light green darken-2 z-depth-5"><img id="icon-four" src="assets/noun_1072403_cc.svg" alt=""></a>
 			</div>
 		</section>
 		<section class="row">
 			<div class="col s12 m12 center-align">
 				<!-- Modal Trigger -->
-				<a id="search-resturant" class="waves-effect waves-light btn modal-trigger green darken-2 disabled" href="#modal1">Hitta restaurang</a>
+				<a id="search-resturant" class="waves-effect waves-light btn modal-trigger green darken-2" href="#modal1">Hitta restaurang</a>
 
 				<!-- Modal Structure -->
 				<div id="modal1" class="modal modal-fixed-footer">
 					<div class="modal-content">
-						<h4>Modal Header</h4>
-						<p>A bunch of text</p>
+						<h4>Rekommenderade restauranger</h4>
+						<p>####Här tänker jag mig att kartan ska visas</p>
 					</div>
 					<div class="modal-footer">
-						<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+						<!-- <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a> -->
 					</div>
 				</div>
 

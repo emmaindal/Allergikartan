@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Allergikartan</title>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- materialize -->
+	<link rel="stylesheet" href="node_modules/materialize-css/dist/css/materialize.min.css">
+	<link rel="stylesheet" href="node_modules/animate.css/animate.css">
+	<link rel="stylesheet" href="css/style.css">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<div class="container">
+		<nav>
+			<div class="nav-wrapper">
+				<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+				<ul class="right hide-on-med-and-down">
+					<li><a href="index.html">Hem</a></li>
+					<li class="active"><a href="tipsa.html">Tipsa oss</a></li>
+					<li><a href="kontakt.html">Kontakt</a></li>
+				</ul>
+				<ul class="side-nav" id="mobile-demo">
+					<li><a href="index.html">Hem</a></li>
+					<li class="active"><a href="tipsa.html">Tipsa oss</a></li>
+					<li><a href="kontakt.html">Kontakt</a></li>
+				</ul>
+			</div>
+		</nav>
+		<section class="row">
+			<div class="col s12 m12">
+				<h1 class="center white-text mainheading animated slideInDown">Tipsa oss!</h1>
+				<p class="center white-text">Har du tips på en restaurang som borde finnas med på Allergikartan?</p>
+				<p class="center white-text">Tipsa oss genom formuläret nedan</p>
+				<hr width="50%">
+			</div>
+		</section>
+		<section class="row">
+			<div class="col s12 m6 offset-m3 tips z-depth-5">
+				<div class="row">
+					<form class="col s12 form">
+						<div class="row">
+							<div class="input-field col s6">
+								<input placeholder="Firstname" id="first_name" type="text" class="validate">
+								<label for="first_name">First Name</label>
+							</div>
+							<div class="input-field col s6">
+								<input  placeholder="Lastname" id="last_name" type="text" class="validate">
+								<label for="last_name">Last Name</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="input-field col s6">
+								<input placeholder="Email" id="email" type="text" class="validate">
+								<label for="email">Email</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="input-field col s12">
+								<input placeholder="Tips på Restaurang" id="resaurang" type="text" class="validate">
+								<label for="resaurang">Restaurang</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="input-field col s6">
+								<select multiple>
+									<option value="" disabled selected>Allergier:</option>
+									<option value="1">Laktosfritt</option>
+									<option value="2">Nötfritt</option>
+									<option value="3">Glutenfritt</option>
+									<option value="4">Äggfritt</option>
+								</select>
+								<label>Välj allergi</label>
+							</div>
+						</div>
+						<button type="submit" class="waves-effect waves-light btn right tips-btn">Tipsa</button>
+					</form>
+				</div>
+			</div>
+		</section>
+	</div>
+	<!-- jQuery -->
+	<script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+	<!-- materialize -->
+	<script type="text/javascript" src="node_modules/materialize-css/dist/js/materialize.min.js"></script>
+	<script type="text/javascript" src="javascript/script.js"></script>
+	<script type="text/javascript" src="javascript/resturantchoice.js"></script>
+</body>
+</html>
