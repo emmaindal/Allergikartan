@@ -13,7 +13,6 @@ body{
 		background-size: cover;
 		-moz-background-size: cover;
 	}
-
 	nav{
 		background-color: rgba(255, 255, 255, 0);
 		width: 100% !important;
@@ -21,37 +20,34 @@ body{
 	.container{
 		width: 100% !important;
 	}
-
 	.mainheading{
 		font-family: 'Sacramento', cursive;
 		font-size: 7rem;
 	}
-
 	#search-resturant{
-		background-color: rgb(54, 122, 63) !important;
+		background-color: rgba(36, 48, 32, 1) !important;
 		margin-top: 5%;
 	}
-
 	.btn-floating.btn-large{
 		background-color: rgba(100, 133, 89, 0.86) !important;
 		margin: 2%;
 		width: 156px;
 		height: 156px;
 	}
-
 	.tips{
 		background-color: white;
 	}
-
 	.form{
 		padding: 5% !important;
 	}
 	.dropdown-content li>span>label {
 		height: 0;
 	}
-
 	.tips-btn{
 		background-color: rgb(54, 122, 63) !important;
+	}
+	.about{
+		padding: 5% !important;
 	}
 	@media only screen and (max-width: 500px) {
 		.mainheading{
