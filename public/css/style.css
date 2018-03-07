@@ -33,11 +33,10 @@ body{
 	}
 
 	.btn-floating.btn-large{
-		background-color: rgb(54, 122, 63) !important;
+		background-color: rgba(100, 133, 89, 0.86) !important;
 		margin: 2%;
 		width: 156px;
 		height: 156px;
-		opacity: 0.9;
 	}
 
 	.tips{
