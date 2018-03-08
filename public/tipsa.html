@@ -39,37 +39,37 @@
 		<section class="row">
 			<div class="col s12 m6 offset-m3 tips z-depth-5">
 				<div class="row">
-					<form class="col s12 form">
+					<form class="col s12 form" action="/tipsa" method="POST">
 						<div class="row">
 							<div class="input-field col s6">
-								<input placeholder="Firstname" id="first_name" type="text" class="validate">
+								<input placeholder="Firstname" id="first_name" name='first_name' type="text" class="validate">
 								<label for="first_name">First Name</label>
 							</div>
 							<div class="input-field col s6">
-								<input  placeholder="Lastname" id="last_name" type="text" class="validate">
+								<input  placeholder="Lastname" id="last_name" name='last_name' type="text" class="validate">
 								<label for="last_name">Last Name</label>
 							</div>
 						</div>
 						<div class="row">
 							<div class="input-field col s6">
-								<input placeholder="Email" id="email" type="text" class="validate">
+								<input placeholder="Email" id="email" name='email' type="text" class="validate">
 								<label for="email">Email</label>
 							</div>
 						</div>
 						<div class="row">
 							<div class="input-field col s12">
-								<input placeholder="Tips på Restaurang" id="resaurang" type="text" class="validate">
+								<input placeholder="Tips på Restaurang" id="restaurant" name='restaurant'type="text" class="validate">
 								<label for="resaurang">Restaurang</label>
 							</div>
 						</div>
 						<div class="row">
 							<div class="input-field col s6">
-								<select multiple>
+								<select multiple name="allergy">
 									<option value="" disabled selected>Allergier:</option>
-									<option value="1">Laktosfritt</option>
-									<option value="2">Nötfritt</option>
-									<option value="3">Glutenfritt</option>
-									<option value="4">Äggfritt</option>
+									<option value="laktosfritt">Laktosfritt</option>
+									<option value="nötfritt">Nötfritt</option>
+									<option value="glutenfritt">Glutenfritt</option>
+									<option value="äggfritt">Äggfritt</option>
 								</select>
 								<label>Välj allergi</label>
 							</div>
