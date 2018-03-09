@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Sacramento');
+@import url('https://fonts.googleapis.com/css?family=Lato:300');
 
 body{
+	font-family: 'Lato', sans-serif;
 	background:
 	linear-gradient(
 		rgba(101, 101, 101, 0.62),
@@ -25,8 +27,8 @@ body{
 		font-size: 7rem;
 	}
 	#search-resturant{
-		background-color: rgba(36, 48, 32, 1) !important;
-		margin-top: 5%;
+		margin-top: 2%;
+		margin-bottom: 4%;
 	}
 	.btn-floating.btn-large{
 		background-color: rgba(100, 133, 89, 0.86) !important;
