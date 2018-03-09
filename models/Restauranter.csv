@@ -1,0 +1,28 @@
+Namn;Adress ;Stad;true;true;false;true;false
+Vigårda Malmö;Centralplan;Malmö;false;true;false;false;false
+Grönt o Gott malmö;Neptunigatan 26;Malmö;SANT;SANT;?;SANT;SANT
+TGI Fridays lilla torg;Lilla torg 17;Malmö;SANT;SANT;?;?;SANT
+Spoonery St Knut;Sankt Knuts väg  7;Malmö;SANT;SANT;?;SANT;SANT
+Spoonery Slottsstaden;Östra stallmästaregatan 2;Malmö;SANT;SANT;?;SANT;SANT
+Vegan bar;Södra skolgatan 45;Malmö;SANT;?;?;SANT;SANT
+La trattoria;Östra Tullgatan 7;Malmö;SANT;SANT;?;SANT;SANT
+Möllans falafel;Bergsgatan 14;Malmö;?;SANT;SANT;SANT;SANT
+Mineral;Sankt knuts väg 13;Malmö;?;SANT;SANT;SANT;SANT
+Ethiostar;Saltmätargatan 19A;Stockholm;SANT;SANT;;SANT;SANT
+Shahrzad;Regeringsgatan 111;Stockholm;SANT;SANT;;SANT;SANT
+Broken;Kungsgatan 18;Stockholm;SANT;SANT;;FALSKT;SANT
+Surfers Stockholm;Regeringsgatan 88;Stockholm;SANT;SANT;;FALSKT;SANT
+Urban Deli;Sveavägen 44;Stockholm;SANT;SANT;;FALSKT;SANT
+Citykonditoriet;Adolf Fredriks kyrkogata 10;Stockholm;SANT;SANT;SANT;FALSKT;SANT
+EAT;Jakobsbergsgatan 15;Stockholm;;SANT;SANT;;SANT
+Max hamburgare Hamngatan;Kungsträdgårdsgatan 20;Stockholm;SANT;SANT;SANT;SANT;SANT
+The Strand;Nybrokajen 9;Stockholm;SANT;SANT;SANT;;SANT
+Wärdshuset Ulla Winbladh;Rosendalsvägen 8;Stockholm;;SANT;SANT;FALSKT;SANT
+Supper Stockholm;Tegnérgatan 37;Stockholm;SANT;SANT;SANT;SANT;SANT
+Gröna Lund;Lilla allmännagränd 9;Stockholm;SANT;SANT;SANT;SANT;SANT
+Bistro södra 32;Södra vägen 32;Göteborg;SANT;SANT;SANT;FALSKT;SANT
+Noba;Viktoriagatan 1a;Göteborg;SANT;SANT;SANT;FALSKT;SANT
+Bryggeriet;Kungsportsavenyn  3;Göteborg;SANT;SANT;SANT;FALSKT;FALSKT
+Kåges;Stora saluhallen ;Göteborg;SANT;SANT;SANT;FALSKT;SANT
+Trattoria Prego;Restaurangbalkongen nya gatan Nordstan;Göteborg;SANT;SANT;SANT;;SANT
+Ritz;Bastionsplatsen;Göteborg;;;SANT;;SANT
