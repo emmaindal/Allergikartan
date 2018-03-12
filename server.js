@@ -72,6 +72,10 @@ app.post('/tipsa', (req, res) => {
   });
 })
 
+app.post('/tipsa/add', (req, res) => {
+  // when URL from email is clicked this takes future params and adds to DB in query
+})
+
 app.listen(8080, () => console.log('Example app listening on port 8080'))
 
 mongoose.connect(
