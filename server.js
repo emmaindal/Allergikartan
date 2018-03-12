@@ -127,6 +127,11 @@ app.post('/tipsa/add', (req, res) => {
   // when URL from email is clicked this takes future params and adds to DB in query
 })
 
+app.use(function (req, res, next) {
+  // 404 error handling. KEEP IN BOTTOM OF EXPRESS
+  res.status(404).sendFile(path.join(__dirname,'/public/404.html'));
+})
+
 app.listen(8080, () => console.log('Example app listening on port 8080'))
 
 mongoose.connect(
