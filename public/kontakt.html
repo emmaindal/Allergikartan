@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="materialize-css/dist/css/materialize.min.css">
 	<link rel="stylesheet" href="animate.css/animate.css">
 	<link rel="stylesheet" href="css/style.css">
-
+	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -18,19 +18,53 @@
 				<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 				<ul class="right hide-on-med-and-down">
 					<li><a href="/">Hem</a></li>
-					<li><a href="/tipsa">Tipsa oss</a></li>
-					<li class="active"><a href="/about">Kontakt</a></li>
+					<li class="active"><a href="/tipsa">Tipsa oss</a></li>
+					<li><a href="/about">Kontakt</a></li>
 				</ul>
 				<ul class="side-nav" id="mobile-demo">
 					<li><a href="/">Hem</a></li>
-					<li><a href="/tipsa">Tipsa oss</a></li>
-					<li class="active"><a href="/about">Kontakt</a></li>
+					<li class="active"><a href="/tipsa">Tipsa oss</a></li>
+					<li><a href="/about">Kontakt</a></li>
 				</ul>
 			</div>
 		</nav>
 		<section class="row">
 			<div class="col s12 m12">
-				<h1 class="center white-text mainheading animated slideInDown">Om Allergikartan</h1>
+				<h1 class="center white-text mainheading animated slideInDown">Kontakta oss</h1>
+				<p class="center white-text">Har du frågor om allergikartan eller vill komma i kontakt med oss?</p>
+				<p class="center white-text">Använd formuläret nedan.</p>
+				<hr width="50%">
+			</div>
+		</section>
+		<section class="row">
+			<div class="col s12 m6 offset-m3 tips z-depth-5">
+				<div class="row">
+					<form class="col s12 form" action="/about" method="POST">
+						<div class="row">
+							<div class="input-field col s6">
+								<input placeholder="Förnamn" id="first_name" name='first_name' type="text" class="validate">
+								<label for="first_name">Förnamn</label>
+							</div>
+							<div class="input-field col s6">
+								<input  placeholder="Efternamn" id="last_name" name='last_name' type="text" class="validate">
+								<label for="last_name">Efternamn</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="input-field col s6">
+								<input placeholder="Email" id="email" name='email' type="text" class="validate">
+								<label for="email">Email</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="input-field col s12">
+								<input placeholder="Ditt meddelande" id="restaurant" name='restaurant'type="text" class="validate">
+								<label for="restaurang">Ditt meddelande</label>
+							</div>
+						</div>
+						<button type="submit" class="waves-effect waves-light btn right tips-btn">Skicka mail!</button>
+					</form>
+				</div>
 			</div>
 		</section>
 	</div>
