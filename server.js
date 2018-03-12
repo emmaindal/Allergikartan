@@ -22,14 +22,14 @@ app.get('/', function(req, res) {
 });
 
 app.get('/tipsa', function(req, res) {
-    res.sendFile(path.join(__dirname,'/public/tipsa.html'));
+  res.sendFile(path.join(__dirname,'/public/tipsa.html'));
 });
 
 app.get('/about', function(req, res) {
 	res.sendFile(path.join(__dirname,'/public/kontakt.html'));
 });
 
-app.post('/tipsa', (req, res) => {
+app.post('/tipsa', function(req, res) {
   var FName = req.body.first_name; //input from first_name :::: NOT USED RIGHT NOW ::::
   var LName = req.body.last_name; //input from last_name :::: NOT USED RIGHT NOW ::::
   var Email = req.body.email // input from email
@@ -70,7 +70,11 @@ app.post('/tipsa', (req, res) => {
         console.log(JSON.stringify(res));
     }
   });
-})
+});
+
+app.get('/tipsa/sent', function(req, res) {
+  res.sendFile(path.join(__dirname,'/public/tipsSent.html'));
+});
 
 app.post('/tipsa/add', (req, res) => {
   // when URL from email is clicked this takes future params and adds to DB in query
