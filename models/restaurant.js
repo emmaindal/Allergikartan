@@ -8,8 +8,8 @@ var restaurantSchema = new Schema({
   gluten:   Boolean, 
   lactose: Boolean,
   nut: Boolean,
-  vegan: Boolean,
-  vegetarian: Boolean
+  lat: Number,
+  lon: Number
 });
 
 var restaurantModel = mongoose.model('Restaurant', restaurantSchema);
