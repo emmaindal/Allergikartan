@@ -7,12 +7,14 @@ body{
 		rgba(101, 101, 101, 0.62)
 		),
 		url("../assets/basil-herbs-green-mediterranean-40720.jpeg"); /*OBS BAKGRUNDSBILD ÄR BARA FÖRSLAG*/
-		min-height:100%;
-		background-attachment: fixed;
-		background-repeat: no-repeat;
-		background-size: cover;
-		-moz-background-size: cover;
+	min-height:100%;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+	-moz-background-size: cover;
+	overflow-x: hidden;
 	}
+	
 
 	nav{
 		background-color: rgba(255, 255, 255, 0);
