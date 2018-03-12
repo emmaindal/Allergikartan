@@ -56,11 +56,13 @@
 				<!-- Modal Structure -->
 				<div id="modal1" class="modal modal-fixed-footer">
 					<div class="modal-content">
-						<h4>Rekommenderade restauranger</h4>
-						<p>####Här tänker jag mig att kartan ska visas</p>
+						<h3>Restauranger</h3>
+						<a id="search-area">Vill du söka resturanger i en annan stad? Klicka här</a>
+						<div height="50" id="search-box"></div>
+						<div id="map"></div>
 					</div>
 					<div class="modal-footer">
-						<!-- <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a> -->
+						<a href="#!" class="modal-action modal-close waves-effect waves-red red darken-2 white-text btn-flat ">Stäng</a>
 					</div>
 				</div>
 
@@ -71,6 +73,8 @@
 	<script type="text/javascript" src="jquery/dist/jquery.min.js"></script>
 	<!-- materialize -->
 	<script type="text/javascript" src="materialize-css/dist/js/materialize.min.js"></script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD84Yod-WQkweqyGbdZeRr44WPA0Y_sddI&callback"
+	type="text/javascript"></script>
 	<script type="text/javascript" src="javascript/script.js"></script>
 	<script type="text/javascript" src="javascript/resturantchoice.js"></script>
 </body>

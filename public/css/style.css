@@ -51,8 +51,25 @@ body{
 	.about{
 		padding: 5% !important;
 	}
+
+	#map {
+		  height: 100%;
+	}
+
 	@media only screen and (max-width: 500px) {
 		.mainheading{
 			font-size: 4rem;
+		}
+
+		.modal{
+			width: 99%;
+			top: 0% !important;
+		}
+		.modal, .modal-content, .modal-footer{
+			max-height: 99% !important;
+		}
+
+		.modal.modal-fixed-footer{
+			height: 100% !important;
 		}
 	}
