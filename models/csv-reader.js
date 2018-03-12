@@ -16,12 +16,16 @@ mongoose.connect(
 
 
 function fileReader() {
-  let csvStream = csv.fromPath("Restauranter.csv").on("data", function(record) {
+  let csvStream = csv.fromPath("Restauranter-excel.csv").on("data", function(record) {
     //the file you want to read from
     csvStream.pause();
     //stops stream after each row
     let stringToSplit = record[0];
+    console.log(stringToSplit)
+
+
     splittedString = stringToSplit.split(";");
+
     Restaurant.create(
       //maps each value to the model. 
       {
@@ -31,8 +35,8 @@ function fileReader() {
         gluten: splittedString[3],
         lactose: splittedString[4],
         nut: splittedString[5],
-        vegan: splittedString[6],
-        vegetarian: splittedString[7]
+        lat: splittedString[6],
+        lon: splittedString[7]
       },
       function(err, small) {
         if (err) {
