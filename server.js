@@ -110,12 +110,12 @@ app.post('/tipsa', function(req, res) {
         console.log(err);  
     } else {
         // Here we should render a "mail was sent page"
-        console.log(JSON.stringify(res));
+        res.redirect('/tipsa/skickat')
     }
   });
 });
 
-app.get('/tipsa/sent', function(req, res) {
+app.get('/tipsa/skickat', function(req, res) {
   res.sendFile(path.join(__dirname,'/public/tipsSent.html'));
 });
 
