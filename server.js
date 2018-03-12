@@ -25,11 +25,11 @@ app.get('/tipsa', function(req, res) {
   res.sendFile(path.join(__dirname,'/public/tipsa.html'));
 });
 
-app.get('/about', function(req, res) {
+app.get('/om', function(req, res) {
 	res.sendFile(path.join(__dirname,'/public/kontakt.html'));
 });
 
-app.post('/about', function(req, res) {
+app.post('/om', function(req, res) {
   var FName = req.body.first_name; //input from first_name
   var LName = req.body.last_name; //input from last_name 
   var Email = req.body.email; // input from email
@@ -66,10 +66,14 @@ app.post('/about', function(req, res) {
         // Here we should enter a "mail was not sent" page
         console.log(err);  
     } else {
-        // Here we should render a "mail was sent page"
-        console.log(JSON.stringify(res));
+        // "mail was sent page"
+        res.redirect('/om/skickat')
     }
   });
+})
+
+app.get('/om/skickat', function(req, res) {
+  res.sendFile(path.join(__dirname,'/public/kontakt_sent.html'));
 })
 
 app.post('/tipsa', function(req, res) {
@@ -116,7 +120,7 @@ app.post('/tipsa', function(req, res) {
 });
 
 app.get('/tipsa/skickat', function(req, res) {
-  res.sendFile(path.join(__dirname,'/public/tipsSent.html'));
+  res.sendFile(path.join(__dirname,'/public/tips_sent.html'));
 });
 
 app.post('/tipsa/add', (req, res) => {
