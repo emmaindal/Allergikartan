@@ -21,7 +21,9 @@ body{
 	}
 	.container{
 		width: 100% !important;
+		max-width: 100%;
 	}
+	
 	.mainheading{
 		font-family: 'Sacramento', cursive;
 		font-size: 7rem;
