@@ -19,27 +19,24 @@ $(document).ready(function(){
 
 	$("#search-resturant").on('click', function(e){
 		e.preventDefault();
-		var dict = []
-		$("form input[type='checkbox']:checked").each(function(){
-			var key = $(this).attr('name');
-			var value = $(this).val();
-			var obj = {
-				key: key,
-				value : value,
-			};
-			dict.push(obj)
-			});
-			console.log($(this).val());
-			var test = JSON.parse(dict)
-			console.log(test);
-		
-		//var formdata = $('#allergy-form').submit();
-
-				
+		var dict = {}
+		// hasClass returns true/false if has class active. Gets class active when clicked in onclick listener on .allergi
+		const laktos = $('#0').hasClass("active");
+		const nut = $('#1').hasClass("active");
+		const gluten = $('#2').hasClass("active");
+		const egg = $('#3').hasClass("active");
+		console.log(laktos, nut, gluten, egg)
+		// Adds the above to dictionary
+		dict.lactose = laktos
+		dict.nut = nut
+		dict.gluten = gluten
+		dict.egg = egg
+		console.log(dict);
+		// Sends the dictionary to / on our server. response = database match			
 		$.ajax({
 			url: "/",
 			type: "POST",
-			data: test,
+			data: dict,
 			success: function (result) {
 				console.log(result);
 				if(result.status == 200){

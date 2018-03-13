@@ -24,12 +24,10 @@ app.get('/', function(req, res) {
 });
 
 app.post('/', function(req,res){
-  //var lactose = req.body.dict.lactose;// if chkd = true, else undefined 
-  //var nut = req.body.dict.nut; // if chkd = true, else undefined
+  var lactose = req.body.laktos;// if chkd = true, else undefined 
+  var nut = req.body.nut; // if chkd = true, else undefined
   var gluten = req.body.gluten; // if chkd = true, else undefined
-  var egg = req.body.egg; // if chkd = true, else undefined
-  console.log(req.body);
-  
+  var egg = req.body.egg; // if chkd = true, else undefined  
   Restaurant.find({$or:[
     {'lactose': lactose },
     {'nut':nut },
