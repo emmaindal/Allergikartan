@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	$('#search-resturant').hide()
 	var icon = $("#allergy-form").children();
 	icon.each(function(index){
 		$('#'+index).on('click', function(){
@@ -12,18 +13,6 @@ $(document).ready(function(){
 				$('#icon-'+index).css('opacity', '0.20');
 			} else {
 				console.log("något är fel")
-			};
-		});
-		$('#'+index).one('click', function() {
-			if ($(this).hasClass('icon-disabled')) {
-				$('#search-resturant').empty();
-				$('#search-resturant').removeClass('btn-flat disabled');
-				$('#search-resturant').css('cssText', 'background-color: rgba(36, 50, 32, 0.96) !important');
-				$('#search-resturant').append('Hitta restaurang');
-			} else if ($('#'+index).hasClass('icon-disabled') === false) {
-				console.log("work in progress");
-			} else{
-				console.log("något är fel");
 			};
 		});
 	});
@@ -41,22 +30,22 @@ $(document).ready(function(){
 
 
 $('.allergi').on('click', function()  {
-	
+
 	if($(this).hasClass('active') == false) {
-	// If the button clicked doesnt have class active (which means its been clicked on)
+		// If the button clicked doesnt have class active (which means its been clicked on)
 		$(this).addClass('active')
 		// add the class active
 	} else {
-	// If it DOES have it
+		// If it DOES have it
 		$(this).removeClass('active')
 		// We remove the class (since its been clicked twice)
 	}
 	if($('.allergi').hasClass("active") == true) {
-	// If any of the allergy buttons have active (been clicked)
+		// If any of the allergy buttons have active (been clicked)
 		$('#search-resturant').show()
 		// We SHOW the search restaurant button
 	} else {
-	// If none of the allergies have been clicked	
+		// If none of the allergies have been clicked
 		$('#search-resturant').hide()
 		// We HIDE the search restaurant button
 	}

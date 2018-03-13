@@ -23,12 +23,13 @@ body{
 		width: 100% !important;
 		max-width: 100%;
 	}
-	
+
 	.mainheading{
 		font-family: 'Sacramento', cursive;
 		font-size: 7rem;
 	}
 	#search-resturant{
+		background-color: rgba(36, 50, 32, 0.96) !important;
 		margin-top: 2%;
 		margin-bottom: 4%;
 	}
