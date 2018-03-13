@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	var icon = $(".icons").children();
+	var icon = $("#allergy-form").children();
 	icon.each(function(index){
 		$('#'+index).on('click', function(){
 			if ($(this).hasClass('icon-disabled')) {
@@ -20,13 +20,21 @@ $(document).ready(function(){
 				$('#search-resturant').removeClass('btn-flat disabled');
 				$('#search-resturant').css('cssText', 'background-color: rgba(36, 50, 32, 0.96) !important');
 				$('#search-resturant').append('Hitta restaurang');
-				var allergy = this.name;
-				console.log(allergy);
 			} else if ($('#'+index).hasClass('icon-disabled') === false) {
 				console.log("work in progress");
 			} else{
 				console.log("något är fel");
 			};
 		});
+	});
+
+	$("#search-resturant").on('click', function(e){
+		e.preventDefault();
+		$("form input[type='checkbox']:checked").each(function(){
+			console.log($(this).val());
+		});
+		var formdata = $('#allergy-form').submit();
+		console.log(formdata);
+
 	});
 });
