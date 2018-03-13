@@ -19,15 +19,41 @@ $(document).ready(function(){
 
 	$("#search-resturant").on('click', function(e){
 		e.preventDefault();
+		var dict = []
 		$("form input[type='checkbox']:checked").each(function(){
+			var key = $(this).attr('name');
+			var value = $(this).val();
+			var obj = {
+				key: key,
+				value : value,
+			};
+			dict.push(obj)
+			});
 			console.log($(this).val());
-			
-		})
-		var formdata = $('#allergy-form').submit();
-		console.log(formdata);
+			var test = JSON.parse(dict)
+			console.log(test);
+		
+		//var formdata = $('#allergy-form').submit();
 
+				
+		$.ajax({
+			url: "/",
+			type: "POST",
+			data: test,
+			success: function (result) {
+				console.log(result);
+				if(result.status == 200){
+					self.isEditMode(!self.isEditMode());
+				}
+			},
+			error: function(result){
+				console.log(result);
+			}
+		});
 	});
-});
+})
+
+	
 
 
 $('.allergi').on('click', function()  {
@@ -51,3 +77,4 @@ $('.allergi').on('click', function()  {
 		// We HIDE the search restaurant button
 	}
 })
+

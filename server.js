@@ -24,11 +24,11 @@ app.get('/', function(req, res) {
 });
 
 app.post('/', function(req,res){
-  var lactose = req.body.lactose;// if chkd = true, else undefined 
-  var nut = req.body.nut; // if chkd = true, else undefined
+  //var lactose = req.body.dict.lactose;// if chkd = true, else undefined 
+  //var nut = req.body.dict.nut; // if chkd = true, else undefined
   var gluten = req.body.gluten; // if chkd = true, else undefined
   var egg = req.body.egg; // if chkd = true, else undefined
-  
+  console.log(req.body);
   
   Restaurant.find({$or:[
     {'lactose': lactose },
@@ -40,6 +40,7 @@ app.post('/', function(req,res){
   function(err,data){
     console.log('DATABAS ')
     console.log(data);
+    res.send(data)
   } 
 )
 })
