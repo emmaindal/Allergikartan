@@ -24,20 +24,22 @@ app.get('/', function(req, res) {
 });
 
 app.post('/', function(req,res){
-  var gluten = req.body.gluten;
-  var egg = req.body.egg;
-  var lactose = req.body.lactose; 
-  var nut = req.body.lactose; 
-
-  Restaurant.find({
-    'nut':nut,
-    'gluten':gluten,
-    'egg':egg,  
-    'lactose':lactose
-  }, 
-  {'lat':1, 'lon':1 , _id:0}, 
+  var lactose = req.body.lactose;// if chkd = true, else undefined 
+  var nut = req.body.nut; // if chkd = true, else undefined
+  var gluten = req.body.gluten; // if chkd = true, else undefined
+  var egg = req.body.egg; // if chkd = true, else undefined
+  
+  
+  Restaurant.find({$or:[
+    {'lactose': lactose },
+    {'nut':nut },
+    {'gluten':gluten},  
+    {'egg':egg},  
+  ]}, 
+  {'name':1, 'lat':1, 'lon':1 , _id:0}, 
   function(err,data){
-    console.log("hoho");
+    console.log('DATABAS ')
+    console.log(data);
   } 
 )
 })

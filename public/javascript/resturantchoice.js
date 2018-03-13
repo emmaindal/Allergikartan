@@ -32,7 +32,8 @@ $(document).ready(function(){
 		e.preventDefault();
 		$("form input[type='checkbox']:checked").each(function(){
 			console.log($(this).val());
-		});
+			
+		})
 		var formdata = $('#allergy-form').submit();
 		console.log(formdata);
 
