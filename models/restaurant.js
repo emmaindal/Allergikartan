@@ -8,6 +8,10 @@ var restaurantSchema = new Schema({
   gluten:   Boolean, 
   lactose: Boolean,
   nut: Boolean,
+  egg: {
+    type: Boolean,
+    default: false
+  },
   lat: Number,
   lon: Number
 });

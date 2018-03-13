@@ -8,6 +8,8 @@ const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 
+const Restaurant = require("./models/restaurant.js");
+
 app.use(bodyParser.urlencoded({
   extended: false
 }));
@@ -20,6 +22,25 @@ app.use(express.static(path.join(__dirname, '/node_modules/')));
 app.get('/', function(req, res) {
 	res.sendFile(path.join(__dirname,'/public/index.html'));
 });
+
+app.post('/', function(req,res){
+  var gluten = req.body.gluten;
+  var egg = req.body.egg;
+  var lactose = req.body.lactose; 
+  var nut = req.body.lactose; 
+
+  Restaurant.find({
+    'nut':nut,
+    'gluten':gluten,
+    'egg':egg,  
+    'lactose':lactose
+  }, 
+  {'lat':1, 'lon':1 , _id:0}, 
+  function(err,data){
+    console.log("hoho");
+  } 
+)
+})
 
 app.get('/tipsa', function(req, res) {
   res.sendFile(path.join(__dirname,'/public/tipsa.html'));
