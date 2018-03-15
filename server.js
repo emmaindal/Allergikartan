@@ -24,26 +24,24 @@ app.get('/', function(req, res) {
 });
 
 app.post('/', function(req,res){
-  var lactose = req.body.laktos;// if chkd = true, else undefined 
+	var dict = req.body;
+	console.log(dict);
+  var lactose = req.body.laktos;// if chkd = true, else undefined
   var nut = req.body.nut; // if chkd = true, else undefined
   var gluten = req.body.gluten; // if chkd = true, else undefined
-  var egg = req.body.egg; // if chkd = true, else undefined  
-  
-  
+  var egg = req.body.egg; // if chkd = true, else undefined
   Restaurant.find({$or:[
     {'lactose': lactose },
     {'nut':nut },
-    {'gluten':gluten},  
-    {'egg':egg},  
+    {'gluten':gluten},
+    {'egg':egg},
   ]},
-  
-  
-  {'name':1, 'lat':1, 'lon':1 , _id:0, 'lactose':1, 'nut':1, 'egg':1, 'gluten':1}, 
+  {'name':1, 'lat':1, 'lon':1 , _id:0},
   function(err,data){
     console.log('DATABAS ')
     console.log(data);
     res.send(data)
-  } 
+  }
 )
 })
 
@@ -57,10 +55,10 @@ app.get('/om', function(req, res) {
 
 app.post('/om', function(req, res) {
   var FName = req.body.first_name; //input from first_name
-  var LName = req.body.last_name; //input from last_name 
+  var LName = req.body.last_name; //input from last_name
   var Email = req.body.email; // input from email
   var MailText = req.body.mail_text;
-  
+
   var auth = {
     type: 'oauth2',
     user: 'Allergikartan@gmail.com', // Email address to auth
@@ -90,7 +88,7 @@ app.post('/om', function(req, res) {
   transporter.sendMail(mailOptions, (err, res) => {
     if (err) {
         // Here we should enter a "mail was not sent" page
-        console.log(err);  
+        console.log(err);
     } else {
         // "mail was sent page"
         res.redirect('/om/skickat')
@@ -108,7 +106,7 @@ app.post('/tipsa', function(req, res) {
   var Email = req.body.email // input from email
   var Restaurant = req.body.restaurant //input from restaurant
   var allergy = req.body.allergy // Value från allergy.children
-  
+
   var auth = {
     type: 'oauth2',
     user: 'Allergikartan@gmail.com', // Email address to auth
@@ -137,7 +135,7 @@ app.post('/tipsa', function(req, res) {
   transporter.sendMail(mailOptions, (err, res) => {
     if (err) {
         // Here we should enter a "mail was not sent" page
-        console.log(err);  
+        console.log(err);
     } else {
         // Here we should render a "mail was sent page"
         res.redirect('/tipsa/skickat')

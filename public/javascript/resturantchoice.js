@@ -32,14 +32,14 @@ $(document).ready(function(){
 	// 	dict.gluten = gluten
 	// 	dict.egg = egg
 	// 	console.log(dict);
-	// 	// Sends the dictionary to / on our server. response = database match			
+	// 	// Sends the dictionary to / on our server. response = database match
 	// 	$.ajax({
 	// 		url: "/",
 	// 		type: "POST",
 	// 		data: dict,
 	// 		success: function (result) {
 	// 			console.log("INNAN RESULT");
-				
+
 	// 			console.log(result);
 	// 			if(result.status == 200){
 	// 				self.isEditMode(!self.isEditMode());
@@ -52,14 +52,14 @@ $(document).ready(function(){
 	// });
 })
 
-	
+
 
 
 $('.allergi').on('click', function()  {
 
 	if($(this).hasClass('active') == false) {
 		// If the button clicked doesnt have class active (which means its been clicked on)
-		$(this).addClass('active')
+		$(this).addClass('active');
 		// add the class active
 	} else {
 		// If it DOES have it
@@ -76,4 +76,3 @@ $('.allergi').on('click', function()  {
 		// We HIDE the search restaurant button
 	}
 })
-
