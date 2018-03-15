@@ -28,13 +28,17 @@ app.post('/', function(req,res){
   var nut = req.body.nut; // if chkd = true, else undefined
   var gluten = req.body.gluten; // if chkd = true, else undefined
   var egg = req.body.egg; // if chkd = true, else undefined  
-  Restaurant.find({$or:[
+  
+  
+  Restaurant.find({[
     {'lactose': lactose },
     {'nut':nut },
     {'gluten':gluten},  
     {'egg':egg},  
-  ]}, 
-  {'name':1, 'lat':1, 'lon':1 , _id:0}, 
+  ]},
+  
+  
+  {'name':1, 'lat':1, 'lon':1 , _id:0, 'lactose':1, 'nut':1, 'egg':1, 'gluten':1}, 
   function(err,data){
     console.log('DATABAS ')
     console.log(data);
