@@ -30,7 +30,7 @@ app.post('/', function(req,res){
   var egg = req.body.egg; // if chkd = true, else undefined  
   
   
-  Restaurant.find({[
+  Restaurant.find({$or:[
     {'lactose': lactose },
     {'nut':nut },
     {'gluten':gluten},  
