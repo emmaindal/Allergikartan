@@ -77,29 +77,26 @@ $("#search-resturant").on("click", function(e) {
 	//EN REFACTORING PÅ KOD NEDAN ÄR NÖDVÄNDIGT
 	if (laktos == true) {
 		var obj ={
-			key: "lactose",
-			value: laktos,
+			"lactose" : laktos,
 		}
 		dict.push(obj);
 	}
 	if (nut == true) {
 		var obj ={
-			key: "nut",
-			value: nut,
+			"nut": nut,
 		}
 		dict.push(obj);
 	}
 	if (gluten == true) {
 		var obj ={
-			key: "gluten",
-			value: gluten,
+			"gluten":gluten,
 		}
 		dict.push(obj);
 	}
 	if (egg == true) {
+		console.log(egg);
 		var obj ={
-			key: "egg",
-			value: egg,
+			"egg" : egg,
 		}
 		dict.push(obj);
 	}
@@ -109,6 +106,8 @@ $("#search-resturant").on("click", function(e) {
 	$.ajax({
 		url: "/",
 		type: "POST",
+		dataType: "json",
+		contentType: 'application/json; charset=utf-8',
 		data: stringDict,
 		success: function(data) {
 			showRestaurants(data);
