@@ -24,6 +24,10 @@ function showPosition(position) {
 	initMap(lat, lon);
 }
 
+function showError(text){
+	$("#map").html("Kunde inte hitta resturanger");
+};
+
 function showRestaurants(data) {
 	$.each(data, function(index, key) {
 		console.log(data);
@@ -66,7 +70,7 @@ $("#map-close").on("click", function(){
 
 $("#search-resturant").on("click", function(e) {
 	e.preventDefault();
-	var dict = [];
+	var dict = {};
 	// hasClass returns true/false if has class active. Gets class active when clicked in onclick listener on .allergi
 	const laktos = $("#0").hasClass("active");
 	const nut = $("#1").hasClass("active");
@@ -74,31 +78,17 @@ $("#search-resturant").on("click", function(e) {
 	const egg = $("#3").hasClass("active");
 
 	//Skickar enbart de allergier som är true till backend
-	//EN REFACTORING PÅ KOD NEDAN ÄR NÖDVÄNDIGT
 	if (laktos == true) {
-		var obj ={
-			"lactose" : laktos,
-		}
-		dict.push(obj);
+		dict["lactose"] = true;
 	}
 	if (nut == true) {
-		var obj ={
-			"nut": nut,
-		}
-		dict.push(obj);
+		dict["nut"] = true;
 	}
 	if (gluten == true) {
-		var obj ={
-			"gluten":gluten,
-		}
-		dict.push(obj);
+		dict["gluten"] = true;
 	}
 	if (egg == true) {
-		console.log(egg);
-		var obj ={
-			"egg" : egg,
-		}
-		dict.push(obj);
+		dict["egg"] = true;
 	}
 	console.log(dict);
 	var stringDict = JSON.stringify(dict);
@@ -113,6 +103,7 @@ $("#search-resturant").on("click", function(e) {
 			showRestaurants(data);
 		},
 		error: function(result) {
+			showError(result);
 			console.log(result);
 		}
 	});
