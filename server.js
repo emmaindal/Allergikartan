@@ -79,7 +79,7 @@ app.post('/om', function(req, res) {
 		auth: auth,
 	});
 	// Sends the mail through the transporter
-	transporter.sendMail(mailOptions, (err, res) => {
+	transporter.sendMail(mailOptions, (err) => {
 		if (err) {
 			// Here we should enter a "mail was not sent" page
 			console.log(err);
