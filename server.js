@@ -1,4 +1,3 @@
-
 const url = require("url");
 const fs = require("fs");
 const path = require('path')
@@ -18,26 +17,16 @@ app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname, '/public/')));
 app.use(express.static(path.join(__dirname, '/node_modules/')));
 
-
 app.get('/', function(req, res) {
 	res.sendFile(path.join(__dirname,'/public/index.html'));
 });
 
 app.post('/', function(req,res){
 	var dict = req.body;
-	console.log(dict)
 	var lactose = dict.lactose;// if chkd = true, else undefined
-	console.log(lactose);
 	var nut = dict.nut; // if chkd = true, else undefined
-	console.log(nut);
-
 	var gluten = dict.gluten; // if chkd = true, else undefined
-	console.log(gluten);
-
 	var egg = dict.egg; // if chkd = true, else undefined
-	console.log(egg);
-
-	console.log(dict);
 	Restaurant.find({$or:[
 		{'lactose': lactose },
 		{'nut':nut },
@@ -46,12 +35,9 @@ app.post('/', function(req,res){
 	]},
 	{'name':1, 'lat':1, 'lon':1 , _id:0},
 	function(err,data){
-		console.log('DATABAS ')
-		console.log(data);
 		res.send(data)
-	}
-)
-})
+	})
+});
 
 app.get('/tipsa', function(req, res) {
 	res.sendFile(path.join(__dirname,'/public/tipsa.html'));
