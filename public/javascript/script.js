@@ -67,8 +67,6 @@ $("#map-close").click(function(){
 
 var clearRestaurantPins = function() {
 	// Clears pins from map
-	console.log('hej');
-	
 	$("#map").empty();
 	// Gets location again since all pins are removed.
 	getLocation();

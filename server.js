@@ -126,7 +126,7 @@ app.post('/tipsa', function(req, res) {
 		auth: auth,
 	});
 	// Sends the mail through the transporter
-	transporter.sendMail(mailOptions, (err, res) => {
+	transporter.sendMail(mailOptions, (err) => {
 		if (err) {
 			// Here we should enter a "mail was not sent" page
 			console.log(err);
@@ -159,7 +159,12 @@ app.listen(8080, () => {
 		"mongodb://admin:admin@ds023373.mlab.com:23373/allergikartandb",
 		function(error) {
 			if (!error) {
-				console.log("databas funkar");
+				console.log("databas startad");
+			} else {
+				console.log('======');
+				console.log('Error starting db');
+				console.log('======');
+				console.log(error);
 			}
 		}
 	);
