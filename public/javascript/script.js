@@ -1,7 +1,9 @@
 $(document).ready(function() {
 	//materialize jquery plugins
 	$(".button-collapse").sideNav();
-	$(".modal").modal();
+	$(".modal").modal({
+		complete : clearRestaurantPins
+	});
 	$("select").material_select();
 
 	getLocation();
@@ -60,10 +62,17 @@ function showError(text){
 //////////////////////// HÄR UNDER TESTAS DET//////////////
 
 $("#map-close").click(function(){
-	$("#map").empty();
-	getLocation();
+	clearRestaurantPins;
 });
 
+var clearRestaurantPins = function() {
+	// Clears pins from map
+	console.log('hej');
+	
+	$("#map").empty();
+	// Gets location again since all pins are removed.
+	getLocation();
+};
 
 $("#search-resturant").on("click", function(e) {
 	e.preventDefault();

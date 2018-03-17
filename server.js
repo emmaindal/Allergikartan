@@ -150,13 +150,18 @@ app.use(function (req, res, next) {
 	res.status(404).sendFile(path.join(__dirname,'/public/404.html'));
 })
 
-app.listen(8080, () => console.log('Example app listening on port 8080'))
 
-mongoose.connect(
-	"mongodb://admin:admin@ds023373.mlab.com:23373/allergikartandb",
-	function(error) {
-		if (!error) {
-			console.log("databas funkar");
+
+
+app.listen(8080, () => {
+	console.log('Example app listening on port 8080');
+	mongoose.connect(
+		"mongodb://admin:admin@ds023373.mlab.com:23373/allergikartandb",
+		function(error) {
+			if (!error) {
+				console.log("databas funkar");
+			}
 		}
-	}
-);
+	);
+});
+
