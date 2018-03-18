@@ -3,6 +3,7 @@ const url = require("url");
 const fs = require("fs");
 const path = require('path')
 const nodemailer = require('nodemailer')
+const buildUrl = require('build-url');
 const mongoose = require("mongoose");
 const express = require('express')
 const app = express()
@@ -113,7 +114,20 @@ app.post('/tipsa', function(req, res) {
 	var LName = req.body.last_name; //input from last_name :::: NOT USED RIGHT NOW ::::
 	var Email = req.body.email // input from email
 	var Restaurant = req.body.restaurant //input from restaurant
-	var allergy = req.body.allergy // Value från allergy.children
+	var Lat = req.body.restaurant.getAttribute('data-lat') 
+	console.log('här är lat' + Lat);
+	
+	var Lon = req.body.res_city
+	var Allergy = req.body.allergy // Value från allergy.children
+	var addURL = buildUrl('http://localhost:8080',{
+		path: 'tipsa/add',
+		queryParams:{
+			restaurant : Restaurant,
+			address : Address,
+			city: City,
+			allergy: Allergy
+		}
+	})
 
 	var auth = {
 		type: 'oauth2',
@@ -132,7 +146,13 @@ app.post('/tipsa', function(req, res) {
 	<p> ===========================================</p>
 	<p> <strong>Tips på restaurang:</strong> ${Restaurant}</p>
 	<p> ============================================</p>
-	<p> <strong>Allergi på restaurang:</strong> ${allergy}</p>`,
+	<p> <strong>Adress:</strong> ${Address}</p>
+	<p> ============================================</p>
+	<p> <strong>Stad:</strong> ${City}</p>
+	<p> ============================================</p>
+	<p> <strong>Allergi på restaurang:</strong> ${Allergy}</p>
+	<p> ============================================</p>
+	<p> <strong>URL:</strong> <a href=''${addURL}>${addURL}</a></p>`,
 	};
 	// Creates a transport protocoll for gmail
 	var transporter = nodemailer.createTransport({

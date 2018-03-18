@@ -39,7 +39,7 @@
 		<section class="row">
 			<div class="col s12 m6 offset-m3 tips z-depth-5">
 				<div class="row">
-					<form class="col s12 form" action="/tipsa" method="POST">
+					<form class="col s12 form" id="tips-form" action="/tipsa" method="POST">
 						<div class="row">
 							<div class="input-field col s6">
 								<input placeholder="Förnamn" id="first_name" name='first_name' type="text" class="validate">
@@ -58,13 +58,14 @@
 						</div>
 						<div class="row">
 							<div class="input-field col s12">
-								<input placeholder="Tips på Restaurang" id="restaurant" name='restaurant'type="text" class="validate">
-								<label for="resaurang">Restaurang</label>
+								<input placeholder="Tips på Restaurang" id="restaurant" name='restaurant' type="text" class="validate">
+								<label for="restaurant">Restaurang</label>
 							</div>
 						</div>
+
 						<div class="row">
 							<div class="input-field col s6">
-								<select multiple name="allergy">
+								<select multiple name="allergy" id = "allergy">
 									<option value="" disabled selected>Allergier:</option>
 									<option value="laktosfritt">Laktosfritt</option>
 									<option value="nötfritt">Nötfritt</option>
@@ -84,6 +85,7 @@
 	<script type="text/javascript" src="jquery/dist/jquery.min.js"></script>
 	<!-- materialize -->
 	<script type="text/javascript" src="materialize-css/dist/js/materialize.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDajEzf4mSfyGFxDv2NDo9C9HEUvl8bA1w&libraries=places"></script>
 	<script type="text/javascript" src="javascript/script.js"></script>
 	<script type="text/javascript" src="javascript/resturantchoice.js"></script>
 </body>
