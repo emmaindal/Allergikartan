@@ -65,22 +65,21 @@
 			</form>
 		</section>
 		<section class="row center-align">
-			<a type="submit" id="search-resturant" class="waves-effect waves-light btn modal-trigger green darken-2" href="#modal1" name="action">Hitta restaurang</a>
+			<a type="submit" id="search-resturant" class="waves-effect waves-light btn modal-trigger green-allergikartan-btn" href="#modal1" name="action">Hitta restaurang</a>
 		</section>
 		<section class="row">
 			<div class="col s12 m12 center-align" id="resturant-search">
 				<!-- Modal Structure -->
 				<div id="modal1" class="map modal modal-fixed-footer">
-					<div class="modal-content">
+					<div class="modal-content map">
 						<p>Vill du söka resturanger i en annan stad?</p>
-						<a class="btn waves-effect waves-green green darken-1 white-text btn-flat" id="search-area">Klicka här</a>
-						<div height="50" id="search-box"></div>
+						<a class="btn waves-effect waves-green white-text green-allergikartan-btn" id="search-area">Klicka här</a>
+						<div size="50" id="search-box"></div>
 						<br>
-
 						<div id="map"></div>
 					</div>
 					<div class="map modal-footer">
-						<a href="#!" id = "map-close" class="map modal-action modal-close waves-effect waves-red red darken-2 white-text btn"><i class="material-icons">close</i></a>
+						<button id="map-close" class="map modal-action modal-close waves-effect waves-red red darken-2 white-text btn close-btn"><i class="material-icons">close</i></button>
 					</div>
 				</div>
 			</div>
@@ -90,7 +89,7 @@
 	<script type="text/javascript" src="jquery/dist/jquery.min.js"></script>
 	<!-- materialize -->
 	<script type="text/javascript" src="materialize-css/dist/js/materialize.min.js"></script>
-	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD84Yod-WQkweqyGbdZeRr44WPA0Y_sddI&callback"
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9w76yDiGL6c3c8sfLAxG1jlpD_wkkQKk&callback&libraries=places"
 	type="text/javascript"></script>
 	<script type="text/javascript" src="javascript/script.js"></script>
 	<script type="text/javascript" src="javascript/resturantchoice.js"></script>

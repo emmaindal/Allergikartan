@@ -1,4 +1,3 @@
-
 const url = require("url");
 const fs = require("fs");
 const path = require('path')
@@ -19,26 +18,16 @@ app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname, '/public/')));
 app.use(express.static(path.join(__dirname, '/node_modules/')));
 
-
 app.get('/', function(req, res) {
 	res.sendFile(path.join(__dirname,'/public/index.html'));
 });
 
 app.post('/', function(req,res){
 	var dict = req.body;
-	console.log(dict)
 	var lactose = dict.lactose;// if chkd = true, else undefined
-	console.log(lactose);
 	var nut = dict.nut; // if chkd = true, else undefined
-	console.log(nut);
-
 	var gluten = dict.gluten; // if chkd = true, else undefined
-	console.log(gluten);
-
 	var egg = dict.egg; // if chkd = true, else undefined
-	console.log(egg);
-
-	console.log(dict);
 	Restaurant.find({$or:[
 		{'lactose': lactose },
 		{'nut':nut },
@@ -47,12 +36,9 @@ app.post('/', function(req,res){
 	]},
 	{'name':1, 'lat':1, 'lon':1 , _id:0},
 	function(err,data){
-		console.log('DATABAS ')
-		console.log(data);
 		res.send(data)
-	}
-)
-})
+	})
+});
 
 app.get('/tipsa', function(req, res) {
 	res.sendFile(path.join(__dirname,'/public/tipsa.html'));
@@ -94,7 +80,7 @@ app.post('/om', function(req, res) {
 		auth: auth,
 	});
 	// Sends the mail through the transporter
-	transporter.sendMail(mailOptions, (err, res) => {
+	transporter.sendMail(mailOptions, (err) => {
 		if (err) {
 			// Here we should enter a "mail was not sent" page
 			console.log(err);
@@ -160,7 +146,7 @@ app.post('/tipsa', function(req, res) {
 		auth: auth,
 	});
 	// Sends the mail through the transporter
-	transporter.sendMail(mailOptions, (err, res) => {
+	transporter.sendMail(mailOptions, (err) => {
 		if (err) {
 			// Here we should enter a "mail was not sent" page
 			console.log(err);
@@ -184,13 +170,23 @@ app.use(function (req, res, next) {
 	res.status(404).sendFile(path.join(__dirname,'/public/404.html'));
 })
 
-app.listen(8080, () => console.log('Example app listening on port 8080'))
 
-mongoose.connect(
-	"mongodb://admin:admin@ds023373.mlab.com:23373/allergikartandb",
-	function(error) {
-		if (!error) {
-			console.log("databas funkar");
+
+
+app.listen(8080, () => {
+	console.log('Example app listening on port 8080');
+	mongoose.connect(
+		"mongodb://admin:admin@ds023373.mlab.com:23373/allergikartandb",
+		function(error) {
+			if (!error) {
+				console.log("databas startad");
+			} else {
+				console.log('======');
+				console.log('Error starting db');
+				console.log('======');
+				console.log(error);
+			}
 		}
-	}
-);
+	);
+});
+
