@@ -5,9 +5,18 @@ var restaurantSchema = new Schema({
   name:  String,
   address: String,
   city: String,
-  gluten:   Boolean, 
-  lactose: Boolean,
-  nut: Boolean,
+  gluten:   {
+    type: Boolean,
+    default: false
+  }, 
+  lactose: {
+    type: Boolean,
+    default: false
+  },
+  nut: {
+    type: Boolean,
+    default: false
+  },
   egg: {
     type: Boolean,
     default: false
