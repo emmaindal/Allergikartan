@@ -6,8 +6,9 @@ $(document).ready(function () {
 	});
 	$("select").material_select();
 
-	getLocation();
 });
+
+getLocation();
 
 var userLat;
 var userLon;
