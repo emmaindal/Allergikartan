@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Sacramento');
 @import url('https://fonts.googleapis.com/css?family=Lato:300');
 
-
 body{
 	font-family: 'Lato', sans-serif;
 	background:
@@ -27,13 +26,7 @@ body{
 	.close-btn{
 		padding: 0 1rem;
 	}
-	
-	.icon-disabled {
-		background: linear-gradient(rgba(180, 180, 180, 1), rgba(180, 180, 180, 1))
-	}
-	.icon-disabled-opacity {
-		opacity: 0.20;
-	}
+
 	.modal-content{
 		height: calc(100%);
 
@@ -95,19 +88,6 @@ body{
 	#map {
 		height: 100%;
 	}
-	
-	.input-field input:focus + label {
-		color:rgb(54, 122, 63) !important;
-	}
-
-	.input-field input[type=text]:focus {
-		border-bottom: 1px solid rgb(54, 122, 63)  !important;
-		box-shadow: 0 1px 0 0 rgb(54, 122, 63)  !important;
-	  }
-	
-	  .input-field input[type=text]:focus + label {
-		color: rgb(54, 122, 63) !important;
-	  }
 
 	@media only screen and (max-width: 500px) {
 		.mainheading{
@@ -140,5 +120,4 @@ body{
 		.modal-footer{
 			position: initial !important;
 		}
-
 	}
