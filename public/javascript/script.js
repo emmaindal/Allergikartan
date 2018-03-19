@@ -46,7 +46,11 @@ function showRestaurants(data) {
 		new google.maps.Marker({
 			position: { lat: restaurant.lat, lng: restaurant.lon },
 			map: map,
-			title: restaurant.name
+			title: restaurant.name,
+			icon: {
+				path: google.maps.SymbolPath.CIRCLE,
+				scale: 5
+			},
 		});
 	});
 
@@ -82,14 +86,14 @@ var clearRestaurantPins = function() {
 			$(this).find('img').removeClass('icon-disabled-opacity')
 			// Removes the disabled from the a tag
 			$(this).removeClass('icon-disabled');
-			// tar väck klassen active 
+			// tar väck klassen active
 			$(this).removeClass('active');
-			
-			}
+
 		}
-	);
-	// Gets location again since all pins are removed.
-	getLocation();
+	}
+);
+// Gets location again since all pins are removed.
+getLocation();
 };
 
 $("#search-resturant").on("click", function (e) {
@@ -138,24 +142,24 @@ $("#new-city").keypress(function(e){
 	if(e.which == 13) {
 		var address = $('#new-city').val()
 		console.log(address);
-		
+
 		geocoder.geocode( { 'address': address}, function(results, status) {
-		  if (status == google.maps.GeocoderStatus.OK) {
-			map.setCenter(results[0].geometry.location);
-			map.setZoom(10);
-			console.log(results);
-			
-		  } else {
-			alert('Geocode was not successful for the following reason: ' + status);
-		  }
+			if (status == google.maps.GeocoderStatus.OK) {
+				map.setCenter(results[0].geometry.location);
+				map.setZoom(10);
+				console.log(results);
+
+			} else {
+				alert('Geocode was not successful for the following reason: ' + status);
+			}
 		});
 	}
 });
 
 function getPlaceLocation() {
 	var ac = new google.maps.places.Autocomplete(document.getElementById('restaurant'), {
-			types: ['establishment']
-		});
+		types: ['establishment']
+	});
 
 	ac.addListener('place_changed', function () {
 		var place = ac.getPlace();
