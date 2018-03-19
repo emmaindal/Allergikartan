@@ -72,6 +72,8 @@ $("#map-close").click(function(){
 var clearRestaurantPins = function() {
 	// Clears pins from map
 	$("#map").empty();
+	// hides resturant
+	$("#search-resturant").hide();
 	// clears the allergy buttons
 	var icon = $("#allergy-form").find('label').children();
 	// Each child in label
