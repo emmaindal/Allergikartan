@@ -11,6 +11,7 @@ $(document).ready(function () {
 var userLat;
 var userLon;
 var map;
+var markers = [];
 //geolocation
 function getLocation() {
 	if (navigator.geolocation) {
@@ -48,10 +49,12 @@ function createUserMarker(lat, lon) {
 }
 
 function showRestaurants(data) {
+	// Skapar användarens marker på kartan
 	createUserMarker(userLat, userLon)
+	// För varrje restaurang databasen skickar tillbaka, skapa en marker
 	$.each(data, function(index, restaurant) {
 		console.log(restaurant);
-		new google.maps.Marker({
+		var marker = new google.maps.Marker({
 			position: { lat: restaurant.lat, lng: restaurant.lon },
 			map: map,
 			title: restaurant.name,
@@ -60,6 +63,7 @@ function showRestaurants(data) {
 				scale: 5
 			},
 		});
+		markers.push(marker);
 	});
 
 	//HÄR MÅSTE VI FIXA SÅ MAN KAN SÖKA PÅ ANNAN STAD
@@ -83,7 +87,10 @@ $("#map-close").click(function(){
 
 var clearRestaurantPins = function() {
 	// Clears pins from map
-	$("#map").empty();
+	// För varje marker i den globala listan (kommer hit när vi skapar dom) sätt dess position till null
+	$.each(markers, function(index, marker){
+		marker.setMap(null);
+	})
 	// hides resturant
 	$("#search-resturant").hide();
 	// clears the allergy buttons
@@ -103,12 +110,11 @@ var clearRestaurantPins = function() {
 	}
 );
 // Gets location again since all pins are removed.
-getLocation();
 };
 
 $("#search-resturant").on("click", function (e) {
 	e.preventDefault();
-	var dict = {};
+	dict = {};
 	// hasClass returns true/false if has class active. Gets class active when clicked in onclick listener on .allergi
 	const laktos = $("#0").hasClass("active");
 	const nut = $("#1").hasClass("active");
