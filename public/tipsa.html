@@ -42,30 +42,30 @@
 					<form class="col s12 form" id="tips-form" action="/tipsa" method="POST">
 						<div class="row">
 							<div class="input-field col s6">
-								<input placeholder="Förnamn" id="first_name" name='first_name' type="text" class="validate">
+								<input placeholder="Förnamn" id="first_name" name='first_name' type="text" class="validate" required>
 								<label for="first_name">Förnamn</label>
 							</div>
 							<div class="input-field col s6">
-								<input  placeholder="Efternamn" id="last_name" name='last_name' type="text" class="validate">
+								<input  placeholder="Efternamn" id="last_name" name='last_name' type="text" class="validate" required>
 								<label for="last_name">Efternamn</label>
 							</div>
 						</div>
 						<div class="row">
 							<div class="input-field col s6">
-								<input placeholder="Email" id="email" name='email' type="text" class="validate">
+								<input placeholder="Email" id="email" name='email' type="email" class="validate" required>
 								<label for="email">Email</label>
 							</div>
 						</div>
 						<div class="row">
 							<div class="input-field col s12">
-								<input placeholder="Tips på Restaurang" id="restaurant" name='restaurant' type="text" class="validate">
+								<input placeholder="Tips på Restaurang" id="restaurant" name='restaurant' type="text" class="validate" required>
 								<label for="restaurant">Restaurang</label>
 							</div>
 						</div>
 
 						<div class="row">
 							<div class="input-field col s6">
-								<select multiple name="allergy" id = "allergy">
+								<select multiple required name="allergy" id="allergy">
 									<option value="" disabled selected>Allergier:</option>
 									<option value="laktosfritt">Laktosfritt</option>
 									<option value="nötfritt">Nötfritt</option>
