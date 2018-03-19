@@ -82,6 +82,8 @@ var clearRestaurantPins = function() {
 			$(this).find('img').removeClass('icon-disabled-opacity')
 			// Removes the disabled from the a tag
 			$(this).removeClass('icon-disabled');
+			// tar väck klassen active 
+			$(this).removeClass('active');
 			
 			}
 		}
