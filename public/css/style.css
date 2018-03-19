@@ -37,7 +37,8 @@ body{
 
 	.modal {
 		top: 5% !important;
-		width: 65% !important;
+		width: 70% !important;
+		min-height: 90% !important;
 		max-height: 100% !important;
 	}
 	nav{
@@ -52,6 +53,11 @@ body{
 	.mainheading{
 		font-family: 'Sacramento', cursive;
 		font-size: 7rem;
+	}
+
+	.secondaryheading{
+		font-family: 'Sacramento', cursive;
+		font-size: 4rem;
 	}
 	#search-resturant{
 		background-color: rgba(36, 50, 32, 0.96) !important;
@@ -104,28 +110,34 @@ body{
 
 		.modal{
 			width: 99% !important;
+			min-height: 90% !important;
 		}
 		.map.modal, .map.modal-content, .map.modal-footer{
 			max-height: 99% !important;
 			top: 0% !important;
 		}
 
-		.map.modal.modal-fixed-footer{
+		.map.modal{
 			height: 100% !important;
 		}
-	}
 
-	@media only screen and (max-width: 992px){
-		.modal {
-			width: 95%;
-			max-height: 90%;
+		.modal-content.map {
+			padding-top: 3%;
 		}
 
-		.modal-content.map{
-			padding-top: 15%;
-		}
-
-		.modal-footer{
+		.modal-footer.map{
 			position: initial !important;
 		}
-	}
+}
+		@media only screen and (max-width: 992px){
+			.modal {
+				width: 95%;
+				min-height: 90% !important;
+				max-height: 90%;
+			}
+
+			.modal-content.map{
+				padding-top: 3%;
+			}
+
+		}
