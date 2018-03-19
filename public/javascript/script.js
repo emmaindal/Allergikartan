@@ -101,14 +101,14 @@ $("#search-resturant").on("click", function (e) {
 		dict["egg"] = true;
 	}
 	console.log(dict);
-	var stringDict = JSON.stringify(dict);
+
 	// Sends the dictionary to / on our server. response = database match
 	$.ajax({
 		url: "/",
 		type: "POST",
 		dataType: "json",
 		contentType: 'application/json; charset=utf-8',
-		data: stringDict,
+		data: dict,
 		success: function (data) {
 			showRestaurants(data);
 		},
