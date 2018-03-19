@@ -63,6 +63,22 @@ $("#map-close").click(function(){
 var clearRestaurantPins = function() {
 	// Clears pins from map
 	$("#map").empty();
+	// clears the allergy buttons
+	var icon = $("#allergy-form").find('label').children();
+	// Each child in label
+	icon.each(function(index){
+		// If it is disabled
+		if ($(this).hasClass('icon-disabled')) {
+			// find the image child and removes the class
+			$(this).find('img').removeClass('icon-disabled-opacity')
+			// Removes the disabled from the a tag
+			$(this).removeClass('icon-disabled');
+			// tar väck klassen active
+			$(this).removeClass('active');
+
+			}
+		}
+	);
 	// Gets location again since all pins are removed.
 	getLocation();
 };
@@ -160,13 +176,11 @@ $("#new-city").keypress(function(e){
 });
 
 function getPlaceLocation() {
-
 	var ac = new google.maps.places.Autocomplete(document.getElementById('restaurant'), {
 		types: ['establishment']
 	});
 
 	ac.addListener('place_changed', function () {
-
 		var place = ac.getPlace();
 
 		if (!place.geometry) {
@@ -175,12 +189,18 @@ function getPlaceLocation() {
 			window.alert("No details available for input: '" + place.name + "'");
 			return;
 		}
-		var dataLat=document.getElementById("restaurant").setAttribute("data-lat", place.geometry.location.lat());
-		var dataLon=document.getElementById("restaurant").setAttribute("data-lon", place.geometry.location.lng());
+		var tipsForm = document.getElementById('tips-form');
+		tipsForm.appendChild(document.createElement('input')).setAttribute("id", "lat");
+		document.getElementById('lat').setAttribute("name", "lat");
+		document.getElementById('lat').value = place.geometry.location.lat();
+		document.getElementById('lat').style.display = 'none';
+
+		tipsForm.appendChild(document.createElement('input')).setAttribute("id", "lng");
+		document.getElementById('lng').setAttribute("name", "lng");
+		document.getElementById('lng').value = place.geometry.location.lng();
+		document.getElementById('lng').style.display = 'none';
+
 	});
 }
-
-
-
 
 getPlaceLocation();
