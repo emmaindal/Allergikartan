@@ -74,7 +74,11 @@
 					<div class="modal-content map">
 						<p>Vill du söka resturanger i en annan stad?</p>
 						<a class="btn waves-effect waves-green white-text green-allergikartan-btn" id="search-area">Klicka här</a>
-						<div size="50" id="search-box">
+						<div size="50" id="search-box" style="display:none;">
+							<div class="row">
+								<div class="input-field col s12"><input id="new-city" type="text"><label for="new-city">Stad</label>
+								</div>
+							</div>
 						</div>
 						<br>
 						<div id="map"></div>
@@ -88,12 +92,9 @@
 	</a>
 	<!-- jQuery -->
 	<script type="text/javascript" src="jquery/dist/jquery.min.js"></script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9w76yDiGL6c3c8sfLAxG1jlpD_wkkQKk&callback&libraries=places" type="text/javascript"></script>
 	<!-- materialize -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCB2yIYKKkyy5B1UVOSQ2R7ojQSTdP2c3M"></script>
-
 	<script type="text/javascript" src="materialize-css/dist/js/materialize.min.js"></script>
-	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9w76yDiGL6c3c8sfLAxG1jlpD_wkkQKk&callback&libraries=places"
-	type="text/javascript"></script>
 	<script type="text/javascript" src="javascript/script.js"></script>
 	<script type="text/javascript" src="javascript/resturantchoice.js"></script>
 </body>

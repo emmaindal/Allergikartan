@@ -4,11 +4,9 @@ $(document).ready(function(){
 	icon.each(function(index){
 		$('#'+index).on('click', function(){
 			if ($(this).hasClass('icon-disabled')) {
-				$('#icon-'+index).removeClass('icon-disabled-opacity')
 				$('#'+index).removeClass('icon-disabled');
 			} else if ($('#'+index).hasClass('icon-disabled') === false) {
 				$('#'+index).addClass('icon-disabled');
-				$('#icon-'+index).addClass('icon-disabled-opacity')
 			} else {
 				console.log("något är fel")
 			};
