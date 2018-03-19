@@ -72,6 +72,20 @@ $("#map-close").click(function(){
 var clearRestaurantPins = function() {
 	// Clears pins from map
 	$("#map").empty();
+	// clears the allergy buttons
+	var icon = $("#allergy-form").find('label').children();
+	// Each child in label
+	icon.each(function(index){
+		// If it is disabled
+		if ($(this).hasClass('icon-disabled')) {
+			// find the image child and removes the class
+			$(this).find('img').removeClass('icon-disabled-opacity')
+			// Removes the disabled from the a tag
+			$(this).removeClass('icon-disabled');
+			
+			}
+		}
+	);
 	// Gets location again since all pins are removed.
 	getLocation();
 };
