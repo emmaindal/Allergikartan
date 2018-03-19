@@ -135,6 +135,25 @@ $('#tips-form').on("submit", function (e) {
 	
 });
 
+$("#new-city").keypress(function(e){
+	var geocoder = new google.maps.Geocoder()
+	if(e.which == 13) {
+		var address = $('#new-city').val()
+		console.log(address);
+		
+		geocoder.geocode( { 'address': address}, function(results, status) {
+		  if (status == google.maps.GeocoderStatus.OK) {
+			map.setCenter(results[0].geometry.location);
+			map.setZoom(10);
+			console.log(results);
+			
+		  } else {
+			alert('Geocode was not successful for the following reason: ' + status);
+		  }
+		});
+	}
+});
+
 function getPlaceLocation() {
 
 	var ac = new google.maps.places.Autocomplete(document.getElementById('restaurant'), {
@@ -155,5 +174,8 @@ function getPlaceLocation() {
 		var dataLon=document.getElementById("restaurant").setAttribute("data-lon", place.geometry.location.lng());
 	});
 }
+
+
+
 
 getPlaceLocation();
