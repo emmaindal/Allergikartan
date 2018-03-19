@@ -24,7 +24,8 @@ function fileReader() {
     console.log(stringToSplit)
 
 
-    splittedString = stringToSplit.split(";");
+    splittedString = stringToSplit.split(",");
+
 
     Restaurant.create(
       //maps each value to the model. 

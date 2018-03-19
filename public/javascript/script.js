@@ -133,24 +133,6 @@ $("#search-resturant").on("click", function (e) {
 });
 
 
-
-$('#tips-form').on("submit", function (e) {
-	e.preventDefault();
-	var email = $('#email').val()
-	console.log(email);
-	var restaurant = $('#restaurant').val()
-	console.log(restaurant);
-	var lat = $('#restaurant').attr('data-lat')
-	console.log(lat);
-	var lon = $('#restaurant').attr('data-lon')
-	console.log(lon);
-
-	var allergy = $('#allergy option:selected').text()
-	console.log(allergy);
-	
-	
-});
-
 $("#new-city").keypress(function(e){
 	var geocoder = new google.maps.Geocoder()
 	if(e.which == 13) {
@@ -171,13 +153,11 @@ $("#new-city").keypress(function(e){
 });
 
 function getPlaceLocation() {
-
 	var ac = new google.maps.places.Autocomplete(document.getElementById('restaurant'), {
 			types: ['establishment']
 		});
 
 	ac.addListener('place_changed', function () {
-
 		var place = ac.getPlace();
 
 		if (!place.geometry) {
@@ -186,12 +166,18 @@ function getPlaceLocation() {
 			window.alert("No details available for input: '" + place.name + "'");
 			return;
 		}
-		var dataLat=document.getElementById("restaurant").setAttribute("data-lat", place.geometry.location.lat());
-		var dataLon=document.getElementById("restaurant").setAttribute("data-lon", place.geometry.location.lng());
+		var tipsForm = document.getElementById('tips-form');
+		tipsForm.appendChild(document.createElement('input')).setAttribute("id", "lat");
+		document.getElementById('lat').setAttribute("name", "lat");
+		document.getElementById('lat').value = place.geometry.location.lat();
+		document.getElementById('lat').style.display = 'none';
+
+		tipsForm.appendChild(document.createElement('input')).setAttribute("id", "lng");
+		document.getElementById('lng').setAttribute("name", "lng");
+		document.getElementById('lng').value = place.geometry.location.lng();
+		document.getElementById('lng').style.display = 'none';
+
 	});
 }
-
-
-
 
 getPlaceLocation();
