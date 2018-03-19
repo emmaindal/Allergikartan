@@ -5,11 +5,8 @@ $(document).ready(function () {
 		complete : clearRestaurantPins
 	});
 	$("select").material_select();
-
+	getLocation();
 });
-
-getLocation();
-
 var userLat;
 var userLon;
 var map;
