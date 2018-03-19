@@ -8,30 +8,36 @@ $(document).ready(function () {
 
 	getLocation();
 });
-
+var userLat;
+var userLon;
+var map;
 //geolocation
 function getLocation() {
 	if (navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition(showPosition);
+		
 	} else {
 		console.log("Geolocation is not supported by this browser.");
 	}
 }
 function showPosition(position) {
-	var lat = position.coords.latitude;
-	var lon = position.coords.longitude;
-	initMap(lat, lon);
+	userLat = position.coords.latitude;
+	userLon = position.coords.longitude;
+	initMap(userLat, userLon);
 }
-var map;
 
-function initMap(lat, lon) {
+
+function initMap() {
 	map = new google.maps.Map(document.getElementById("map"), {
-		center: { lat: lat, lng: lon },
-		zoom: 10,
+		center: { lat: userLat, lng: userLon },
+		zoom: 12,
 		gestureHandling: 'greedy',
 		zoomControl: true,
 	});
-	var marker = new google.maps.Marker({
+}
+
+function createUserMarker(lat, lon) {
+	new google.maps.Marker({
 		position: {
 			lat: lat,
 			lng: lon
@@ -40,7 +46,9 @@ function initMap(lat, lon) {
 		title: "Här är du!"
 	});
 }
+
 function showRestaurants(data) {
+	createUserMarker(userLat, userLon)
 	$.each(data, function(index, restaurant) {
 		console.log(restaurant);
 		new google.maps.Marker({
