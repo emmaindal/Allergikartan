@@ -8,6 +8,7 @@ $(document).ready(function () {
 
 	getLocation();
 });
+
 var userLat;
 var userLon;
 var map;
@@ -27,11 +28,10 @@ function showPosition(position) {
 	initMap(userLat, userLon);
 }
 
-
 function initMap() {
 	map = new google.maps.Map(document.getElementById("map"), {
 		center: { lat: userLat, lng: userLon },
-		zoom: 12,
+		zoom: 13,
 		gestureHandling: 'greedy',
 		zoomControl: true,
 	});
@@ -60,28 +60,37 @@ function showRestaurants(data) {
 			title: restaurant.name,
 			icon: {
 				path: google.maps.SymbolPath.CIRCLE,
-				scale: 5
+				scale: 8,
+				strokeColor: "rgb(255, 134, 22)"
 			},
 		});
 		markers.push(marker);
 	});
 
-	//HÄR MÅSTE VI FIXA SÅ MAN KAN SÖKA PÅ ANNAN STAD
 	$("#search-area").on("click", function() {
-		$("#search-box").empty();
-		$("#search-box").append(
-			//Här ska sökboxen läggas till från Google places
-			"<p>Detta ska bli en sökruta</p>"
-		);
+		if ($("#search-area").hasClass('search-box') == false) {
+			console.log("har ingen class")
+			$("#search-area").addClass('search-box');
+		} else {
+			console.log("har classen men tas nu bort")
+			$("#search-area").removeClass('search-box');
+		}
+
+		if ($("#search-area").hasClass('search-box') == true){
+			$("#search-box").show();
+		} else {
+			$("#search-box").hide();
+		}
 	});
 }
+
 function showError(text){
 	$("#map").html("Kunde inte hitta resturanger");
 };
 
-//////////////////////// HÄR UNDER TESTAS DET//////////////
-
 $("#map-close").click(function(){
+	$('#new-city').val('');
+	$("#search-box").hide();
 	clearRestaurantPins;
 });
 
@@ -109,7 +118,6 @@ var clearRestaurantPins = function() {
 		}
 	}
 );
-// Gets location again since all pins are removed.
 };
 
 $("#search-resturant").on("click", function (e) {
@@ -151,7 +159,6 @@ $("#search-resturant").on("click", function (e) {
 		}
 	});
 });
-
 
 $("#new-city").keypress(function(e){
 	var geocoder = new google.maps.Geocoder()
