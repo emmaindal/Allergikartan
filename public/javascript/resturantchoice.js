@@ -4,19 +4,16 @@ $(document).ready(function(){
 	icon.each(function(index){
 		$('#'+index).on('click', function(){
 			if ($(this).hasClass('icon-disabled')) {
-				$(this).css('background', 'none');
-				$('#icon-'+index).css('opacity', '1');
+				$('#icon-'+index).removeClass('icon-disabled-opacity')
 				$('#'+index).removeClass('icon-disabled');
 			} else if ($('#'+index).hasClass('icon-disabled') === false) {
 				$('#'+index).addClass('icon-disabled');
-				$(this).css('background', 'linear-gradient(rgba(180, 180, 180, 1), rgba(180, 180, 180, 1))');
-				$('#icon-'+index).css('opacity', '0.20');
+				$('#icon-'+index).addClass('icon-disabled-opacity')
 			} else {
 				console.log("något är fel")
 			};
 		});
 	});
-
 	// $("#search-resturant").on('click', function(e){
 	// 	e.preventDefault();
 	// 	var dict = {}

@@ -89,6 +89,14 @@ body{
 		height: 100%;
 	}
 
+	.icon-disabled {
+		background: linear-gradient(rgba(180, 180, 180, 1), rgba(180, 180, 180, 1));
+	}
+
+	.icon-disabled-opacity {
+		opacity: 0.20;
+	}
+
 	@media only screen and (max-width: 500px) {
 		.mainheading{
 			font-size: 4rem;
