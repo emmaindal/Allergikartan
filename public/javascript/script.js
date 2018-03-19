@@ -49,15 +49,6 @@ function showRestaurants(data) {
 			title: restaurant.name
 		});
 	});
-
-	//HÄR MÅSTE VI FIXA SÅ MAN KAN SÖKA PÅ ANNAN STAD
-	$("#search-area").on("click", function() {
-		$("#search-box").empty();
-		$("#search-box").append(
-			//Här ska sökboxen läggas till från Google places
-			"<p>Detta ska bli en sökruta</p>"
-		);
-	});
 }
 function showError(text){
 	$("#map").html("Kunde inte hitta resturanger");
@@ -79,6 +70,7 @@ var clearRestaurantPins = function() {
 $("#search-resturant").on("click", function (e) {
 	e.preventDefault();
 	var dict = {};
+	console.log(dict);
 	// hasClass returns true/false if has class active. Gets class active when clicked in onclick listener on .allergi
 	const laktos = $("#0").hasClass("active");
 	const nut = $("#1").hasClass("active");
@@ -116,8 +108,6 @@ $("#search-resturant").on("click", function (e) {
 	});
 });
 
-
-
 $('#tips-form').on("submit", function (e) {
 	e.preventDefault();
 	var email = $('#email').val()
@@ -131,25 +121,40 @@ $('#tips-form').on("submit", function (e) {
 
 	var allergy = $('#allergy option:selected').text()
 	console.log(allergy);
-	
-	
+
+
 });
 
+$("#search-area").on("click", function() {
+	if ($("#search-area").hasClass('search-box') == false) {
+		console.log("har ingen class")
+		$("#search-area").addClass('search-box');
+	} else {
+		console.log("har classen men tas nu bort")
+		$("#search-area").removeClass('search-box');
+	}
+
+	if ($("#search-area").hasClass('search-box') == true){
+		$("#search-box").show();
+	} else {
+		$("#search-box").hide();
+	}
+});
 $("#new-city").keypress(function(e){
 	var geocoder = new google.maps.Geocoder()
 	if(e.which == 13) {
 		var address = $('#new-city').val()
 		console.log(address);
-		
+
 		geocoder.geocode( { 'address': address}, function(results, status) {
-		  if (status == google.maps.GeocoderStatus.OK) {
-			map.setCenter(results[0].geometry.location);
-			map.setZoom(10);
-			console.log(results);
-			
-		  } else {
-			alert('Geocode was not successful for the following reason: ' + status);
-		  }
+			if (status == google.maps.GeocoderStatus.OK) {
+				map.setCenter(results[0].geometry.location);
+				map.setZoom(10);
+				console.log(results);
+
+			} else {
+				alert('Geocode was not successful for the following reason: ' + status);
+			}
 		});
 	}
 });
@@ -157,8 +162,8 @@ $("#new-city").keypress(function(e){
 function getPlaceLocation() {
 
 	var ac = new google.maps.places.Autocomplete(document.getElementById('restaurant'), {
-			types: ['establishment']
-		});
+		types: ['establishment']
+	});
 
 	ac.addListener('place_changed', function () {
 
