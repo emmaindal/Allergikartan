@@ -51,7 +51,6 @@ function showRestaurants(data) {
 	createUserMarker(userLat, userLon)
 	// För varrje restaurang databasen skickar tillbaka, skapa en marker
 	$.each(data, function(index, restaurant) {
-		console.log(restaurant);
 		var marker = new google.maps.Marker({
 			position: { lat: restaurant.lat, lng: restaurant.lon },
 			map: map,
@@ -67,10 +66,8 @@ function showRestaurants(data) {
 
 	$("#search-area").on("click", function() {
 		if ($("#search-area").hasClass('search-box') == false) {
-			console.log("har ingen class")
 			$("#search-area").addClass('search-box');
 		} else {
-			console.log("har classen men tas nu bort")
 			$("#search-area").removeClass('search-box');
 		}
 
@@ -149,7 +146,6 @@ $("#search-resturant").on("click", function (e) {
 		contentType: 'application/json; charset=utf-8',
 		data: stringDict,
 		success: function(data) {
-			console.log(data);
 			showRestaurants(data);
 		},
 		error: function (result) {
@@ -162,14 +158,11 @@ $("#new-city").keypress(function(e){
 	var geocoder = new google.maps.Geocoder()
 	if(e.which == 13) {
 		var address = $('#new-city').val()
-		console.log(address);
 
 		geocoder.geocode( { 'address': address}, function(results, status) {
 			if (status == google.maps.GeocoderStatus.OK) {
 				map.setCenter(results[0].geometry.location);
 				map.setZoom(10);
-				console.log(results);
-
 			} else {
 				alert('Geocode was not successful for the following reason: ' + status);
 			}

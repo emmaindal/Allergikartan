@@ -4,140 +4,137 @@
 body{
 	font-family: 'Lato', sans-serif;
 	background:
-	linear-gradient(
-		rgba(101, 101, 101, 0.62),
-		rgba(101, 101, 101, 0.62)
-		),
-		url("../assets/basil-herbs-green-mediterranean-40720.jpeg");
-		min-height:100%;
-		background-attachment: fixed;
-		background-repeat: no-repeat;
-		background-size: cover;
-		-moz-background-size: cover;
-	}
+	linear-gradient(rgba(101, 101, 101, 0.62), rgba(101, 101, 101, 0.62)),
+	url("../assets/basil-herbs-green-mediterranean-40720.jpeg");
+	min-height:100%;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+	-moz-background-size: cover;
+}
 
-	.row{
-		margin-right: 0rem !important;
-	}
-	.green-allergikartan-btn{
-		background-color: rgba(36, 50, 32, 0.96) !important;
-	}
+.row{
+	margin-right: 0rem !important;
+}
+.green-allergikartan-btn{
+	background-color: rgba(36, 50, 32, 0.96) !important;
+}
 
-	.close-btn{
-		padding: 0 1rem;
-	}
+.close-btn{
+	padding: 0 1rem;
+}
 
-	.modal-content{
-		height: calc(100%);
+.modal-content{
+	height: calc(100%);
 
-	}
-	.modal-content.map{
-		padding: 1%;
-	}
+}
+.modal-content.map{
+	padding: 1%;
+}
 
-	.modal {
-		top: 5% !important;
-		width: 70% !important;
-		min-height: 90% !important;
-		max-height: 100% !important;
-	}
-	nav{
-		background-color: rgba(255, 255, 255, 0);
-		width: 100% !important;
-	}
-	.container{
-		width: 100% !important;
-		max-width: 100%;
-	}
+.modal {
+	top: 5% !important;
+	width: 70% !important;
+	min-height: 90% !important;
+	max-height: 100% !important;
+}
+nav{
+	background-color: rgba(255, 255, 255, 0);
+	width: 100% !important;
+}
+.container{
+	width: 100% !important;
+	max-width: 100%;
+}
 
+.mainheading{
+	font-family: 'Sacramento', cursive;
+	font-size: 7rem;
+}
+
+.secondaryheading{
+	font-family: 'Sacramento', cursive;
+	font-size: 4rem;
+}
+#search-resturant{
+	background-color: rgba(36, 50, 32, 0.96) !important;
+	margin-top: 2%;
+	margin-bottom: 4%;
+}
+.btn-floating.btn-large{
+	background-color: rgba(100, 133, 89, 0.86) !important;
+	margin: 2%;
+	width: 156px;
+	height: 156px;
+}
+.tips{
+	background-color: white;
+}
+.form{
+	padding: 5% !important;
+}
+.dropdown-content li>span>label {
+	height: 0;
+}
+.tips-btn{
+	background-color: rgb(54, 122, 63) !important;
+}
+.about{
+	background-color: rgba(82, 102, 76, 0.6) !important;
+	padding: 2% !important;
+}
+
+#contact{
+	background-color: rgba(36, 50, 32, 0.96) !important
+}
+
+#map {
+	height: 100%;
+}
+
+.icon-disabled {
+	background: linear-gradient(rgba(180, 180, 180, 1), rgba(180, 180, 180, 1));
+}
+
+.icon-disabled-opacity {
+	opacity: 0.20;
+}
+
+@media only screen and (max-width: 500px) {
 	.mainheading{
-		font-family: 'Sacramento', cursive;
-		font-size: 7rem;
-	}
-
-	.secondaryheading{
-		font-family: 'Sacramento', cursive;
 		font-size: 4rem;
 	}
-	#search-resturant{
-		background-color: rgba(36, 50, 32, 0.96) !important;
-		margin-top: 2%;
-		margin-bottom: 4%;
+
+	.modal{
+		width: 99% !important;
+		min-height: 90% !important;
 	}
-	.btn-floating.btn-large{
-		background-color: rgba(100, 133, 89, 0.86) !important;
-		margin: 2%;
-		width: 156px;
-		height: 156px;
-	}
-	.tips{
-		background-color: white;
-	}
-	.form{
-		padding: 5% !important;
-	}
-	.dropdown-content li>span>label {
-		height: 0;
-	}
-	.tips-btn{
-		background-color: rgb(54, 122, 63) !important;
-	}
-	.about{
-		background-color: rgba(82, 102, 76, 0.6) !important;
-		padding: 2% !important;
+	.map.modal, .map.modal-content, .map.modal-footer{
+		max-height: 99% !important;
+		top: 0% !important;
 	}
 
-	#contact{
-		background-color: rgba(36, 50, 32, 0.96) !important
+	.map.modal{
+		height: 100% !important;
 	}
 
-	#map {
-		height: 100%;
+	.modal-content.map {
+		padding-top: 3%;
 	}
 
-	.icon-disabled {
-		background: linear-gradient(rgba(180, 180, 180, 1), rgba(180, 180, 180, 1));
+	.modal-footer.map{
+		position: initial !important;
 	}
-
-	.icon-disabled-opacity {
-		opacity: 0.20;
-	}
-
-	@media only screen and (max-width: 500px) {
-		.mainheading{
-			font-size: 4rem;
-		}
-
-		.modal{
-			width: 99% !important;
-			min-height: 90% !important;
-		}
-		.map.modal, .map.modal-content, .map.modal-footer{
-			max-height: 99% !important;
-			top: 0% !important;
-		}
-
-		.map.modal{
-			height: 100% !important;
-		}
-
-		.modal-content.map {
-			padding-top: 3%;
-		}
-
-		.modal-footer.map{
-			position: initial !important;
-		}
 }
-		@media only screen and (max-width: 992px){
-			.modal {
-				width: 95%;
-				min-height: 90% !important;
-				max-height: 90%;
-			}
+@media only screen and (max-width: 992px){
+	.modal {
+		width: 95%;
+		min-height: 90% !important;
+		max-height: 90%;
+	}
 
-			.modal-content.map{
-				padding-top: 3%;
-			}
+	.modal-content.map{
+		padding-top: 3%;
+	}
 
-		}
+}

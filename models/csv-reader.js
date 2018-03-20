@@ -14,7 +14,6 @@ mongoose.connect(
   }
 );
 
-
 function fileReader() {
   let csvStream = csv.fromPath("Restauranter-excel.csv").on("data", function(record) {
     //the file you want to read from
@@ -23,11 +22,10 @@ function fileReader() {
     let stringToSplit = record[0];
     console.log(stringToSplit)
 
-
     splittedString = stringToSplit.split(";");
 
     Restaurant.create(
-      //maps each value to the model. 
+      //maps each value to the model.
       {
         name: splittedString[0],
         address: splittedString[1],
@@ -42,7 +40,6 @@ function fileReader() {
         if (err) {
           console.log(err);
         }
-
       }
     );
   csvStream.resume();

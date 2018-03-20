@@ -14,43 +14,7 @@ $(document).ready(function(){
 			};
 		});
 	});
-	// $("#search-resturant").on('click', function(e){
-	// 	e.preventDefault();
-	// 	var dict = {}
-	// 	// hasClass returns true/false if has class active. Gets class active when clicked in onclick listener on .allergi
-	// 	const laktos = $('#0').hasClass("active");
-	// 	const nut = $('#1').hasClass("active");
-	// 	const gluten = $('#2').hasClass("active");
-	// 	const egg = $('#3').hasClass("active");
-	// 	console.log(laktos, nut, gluten, egg)
-	// 	// Adds the above to dictionary
-	// 	dict.lactose = laktos
-	// 	dict.nut = nut
-	// 	dict.gluten = gluten
-	// 	dict.egg = egg
-	// 	console.log(dict);
-	// 	// Sends the dictionary to / on our server. response = database match
-	// 	$.ajax({
-	// 		url: "/",
-	// 		type: "POST",
-	// 		data: dict,
-	// 		success: function (result) {
-	// 			console.log("INNAN RESULT");
-
-	// 			console.log(result);
-	// 			if(result.status == 200){
-	// 				self.isEditMode(!self.isEditMode());
-	// 			}
-	// 		},
-	// 		error: function(result){
-	// 			console.log(result);
-	// 		}
-	// 	});
-	// });
 })
-
-
-
 
 $('.allergi').on('click', function()  {
 

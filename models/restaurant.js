@@ -8,7 +8,7 @@ var restaurantSchema = new Schema({
   gluten:   {
     type: Boolean,
     default: false
-  }, 
+  },
   lactose: {
     type: Boolean,
     default: false
@@ -27,6 +27,5 @@ var restaurantSchema = new Schema({
 
 var restaurantModel = mongoose.model('Restaurant', restaurantSchema);
 
-
-// denna tillåter annan att gå in och hämta schemat. 
+// denna tillåter annan att gå in och hämta schemat.
 module.exports = restaurantModel

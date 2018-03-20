@@ -7,7 +7,6 @@ const mongoose = require("mongoose");
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
-
 const Restaurant = require("./models/restaurant.js");
 
 app.use(
@@ -15,8 +14,8 @@ app.use(
     extended: false
   })
 );
-app.use(bodyParser.json());
 
+app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "/public/")));
 app.use(express.static(path.join(__dirname, "/node_modules/")));
 
@@ -211,7 +210,7 @@ app.get("/tipsa/add", (req, res) => {
 	  }
     }
   );
-  
+
 });
 
 app.use(function(req, res, next) {
@@ -220,12 +219,12 @@ app.use(function(req, res, next) {
 });
 
 app.listen(8080, () => {
-  console.log("Example app listening on port 8080");
+  console.log("Allergikartan listening on port 8080");
   mongoose.connect(
     "mongodb://admin:admin@ds023373.mlab.com:23373/allergikartandb",
     function(error) {
       if (!error) {
-        console.log("databas startad");
+        console.log("Databas startad");
       } else {
         console.log("======");
         console.log("Error starting db");
