@@ -7,6 +7,8 @@ $(document).ready(function () {
 	$("select").material_select();
 	getLocation();
 });
+var googleMapsKey = config.GOOGLE_MAPS_KEY;
+var googlePlacesKey = config.GOOGLE_PLACES_KEY;
 var userLat;
 var userLon;
 var map;
