@@ -1,6 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Sacramento');
 @import url('https://fonts.googleapis.com/css?family=Lato:300');
 
+
+:root{
+	--primary-color: rgba(36, 50, 32, 0.96) !important;
+	--secondary-color: rgb(54, 122, 63) !important;
+	--primary-border-color: rgba(60, 83, 53, 0.96) !important;
+	--primary-checkbox-color: rgba(115, 158, 102, 0.96) !important;
+}
 body{
 	font-family: 'Lato', sans-serif;
 	background:
@@ -13,11 +20,30 @@ body{
 	-moz-background-size: cover;
 }
 
+.dropdown-content li>a, .dropdown-content li>span{
+	color: var(--primary-color);
+	line-height: 50px !important;
+	display: flex !important;
+}
+
+[type="checkbox"]:checked+label:before{
+	border-right: 2px solid var(--primary-checkbox-color);
+    border-bottom: 2px solid var(--primary-checkbox-color);
+}
+
+ .input-field input:focus + label {
+   color: var(--primary-border-color) !important;
+ }
+ .row .input-field input:focus {
+   border-bottom: 1px solid var(--primary-border-color) !important;
+   box-shadow: 0 1px 0 0 var(--primary-border-color) !important
+ }
+
 .row{
 	margin-right: 0rem !important;
 }
 .green-allergikartan-btn{
-	background-color: rgba(36, 50, 32, 0.96) !important;
+	background-color: var(--primary-color) !important;
 }
 
 .close-btn{
@@ -47,22 +73,25 @@ nav{
 	max-width: 100%;
 }
 
-.mainheading{
+.mainheading, .secondaryheading{
 	font-family: 'Sacramento', cursive;
+}
+
+.mainheading{
 	font-size: 7rem;
 }
 
 .secondaryheading{
-	font-family: 'Sacramento', cursive;
 	font-size: 4rem;
 }
+
 #search-resturant{
-	background-color: rgba(36, 50, 32, 0.96) !important;
+	background-color: var(--primary-color) !important;
 	margin-top: 2%;
 	margin-bottom: 4%;
 }
 .btn-floating.btn-large{
-	background-color: rgba(100, 133, 89, 0.86) !important;
+	background-color: var(--primary-color) !important;
 	margin: 2%;
 	width: 156px;
 	height: 156px;
@@ -77,15 +106,15 @@ nav{
 	height: 0;
 }
 .tips-btn{
-	background-color: rgb(54, 122, 63) !important;
+	background-color: var(--secondary-color) !important;
 }
 .about{
 	background-color: rgba(82, 102, 76, 0.6) !important;
 	padding: 2% !important;
 }
 
-#contact{
-	background-color: rgba(36, 50, 32, 0.96) !important
+#contact-btn{
+	background-color: var(--primary-color) !important
 }
 
 #map {
