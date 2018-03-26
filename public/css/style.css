@@ -7,6 +7,7 @@
 	--secondary-color: rgb(54, 122, 63) !important;
 	--primary-border-color: rgba(60, 83, 53, 0.96) !important;
 	--primary-checkbox-color: rgba(115, 158, 102, 0.96) !important;
+	--icon-color: rgba(100, 133, 89, 0.86);
 }
 body{
 	font-family: 'Lato', sans-serif;
@@ -91,7 +92,7 @@ nav{
 	margin-bottom: 4%;
 }
 .btn-floating.btn-large{
-	background-color: var(--primary-color) !important;
+	background-color: var(--icon-color) !important;
 	margin: 2%;
 	width: 156px;
 	height: 156px;
